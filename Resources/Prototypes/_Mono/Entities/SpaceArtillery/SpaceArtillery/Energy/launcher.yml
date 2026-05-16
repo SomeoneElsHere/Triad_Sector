@@ -165,6 +165,8 @@
   - type: Battery
     maxCharge: 18000
     startingCharge: 18000
+    maxCharge: 18000
+    startingCharge: 18000
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
     range: 500
@@ -181,6 +183,7 @@
       path: /Audio/Weapons/click.ogg
   - type: BatterySelfRecharger
     autoRecharge: true
+    autoRechargeRate: 2250
     autoRechargeRate: 2250
   - type: SpaceArtillery
     powerChargeRate: 700
@@ -399,8 +402,12 @@
     projectileSpeed: 240
     minAngle: 0
     maxAngle: 6
+    maxAngle: 6
     fireRate: 1
     recoil: 10 # 2/5x
+    burstCooldown: 5.5
+    burstFireRate: 100
+    shotsPerBurst: 100
     burstCooldown: 5.5
     burstFireRate: 100
     shotsPerBurst: 100
@@ -413,6 +420,7 @@
       path: /Audio/Weapons/click.ogg
   - type: BatterySelfRecharger
     autoRecharge: true
+    autoRechargeRate: 30000
     autoRechargeRate: 30000
   - type: SpaceArtillery
     powerChargeRate: 700
@@ -573,6 +581,7 @@
     range: 500
   - type: Gun
     fireRate: 15
+    fireRate: 15
     recoil: 0
     minAngle: 0
     maxAngle: 0
@@ -652,6 +661,7 @@
       path: /Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg
   - type: SpaceArtillery
     powerChargeRate: 20000
+    powerChargeRate: 20000
     powerUsePassive: 300
     powerUseActive: 0
   - type: FireControlRotate
@@ -703,10 +713,13 @@
   - type: Battery
     maxCharge: 56250 # 20 seconds of constant fire, 375 rock walls destroyed per full mag. 5 mining pulsers needed to equal its output.
     startingCharge: 56250
+    maxCharge: 56250 # 20 seconds of constant fire, 375 rock walls destroyed per full mag. 5 mining pulsers needed to equal its output.
+    startingCharge: 56250
   - type: BatterySelfRecharger
     autoRechargePause: true
     autoRechargePauseTime: 30
     autoRecharge: true
+    autoRechargeRate: 56250
     autoRechargeRate: 56250
   - type: FireControlRotate
   - type: ExaminableBattery
