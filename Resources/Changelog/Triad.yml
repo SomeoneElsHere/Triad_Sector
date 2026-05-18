@@ -689,3 +689,12 @@ Entries:
   id: 2205
   time: '2026-05-17T06:24:11.0000000+00:00'
   url: https://github.com/Triad-Sector/Triad_Sector/pull/80
+- author: Minerva
+  changes:
+    - type: Fix
+      message: >-
+        Undergarment layering has been fixed for the following species: IPC,
+        Harpy, Rodentia, Feroxi, Vulpkanin, Chitinid.
+  id: 2206
+  time: '2026-05-18T02:50:47.0000000+00:00'
+  url: https://github.com/Triad-Sector/Triad_Sector/pull/97
