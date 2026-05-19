@@ -653,7 +653,6 @@
       path: /Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg
   - type: SpaceArtillery
     powerChargeRate: 20000
-    powerChargeRate: 20000
     powerUsePassive: 300
     powerUseActive: 0
   - type: FireControlRotate
