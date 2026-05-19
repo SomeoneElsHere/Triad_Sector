@@ -708,7 +708,6 @@
     autoRechargePauseTime: 30
     autoRecharge: true
     autoRechargeRate: 56250
-    autoRechargeRate: 56250
   - type: FireControlRotate
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
