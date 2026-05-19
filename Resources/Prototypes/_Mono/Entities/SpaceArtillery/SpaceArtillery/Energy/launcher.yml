@@ -165,8 +165,6 @@
   - type: Battery
     maxCharge: 18000
     startingCharge: 18000
-    maxCharge: 18000
-    startingCharge: 18000
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
     range: 500
@@ -402,12 +400,8 @@
     projectileSpeed: 240
     minAngle: 0
     maxAngle: 6
-    maxAngle: 6
     fireRate: 1
     recoil: 10 # 2/5x
-    burstCooldown: 5.5
-    burstFireRate: 100
-    shotsPerBurst: 100
     burstCooldown: 5.5
     burstFireRate: 100
     shotsPerBurst: 100
@@ -420,7 +414,6 @@
       path: /Audio/Weapons/click.ogg
   - type: BatterySelfRecharger
     autoRecharge: true
-    autoRechargeRate: 30000
     autoRechargeRate: 30000
   - type: SpaceArtillery
     powerChargeRate: 700
@@ -711,8 +704,6 @@
   - type: Appearance
   - type: AmmoCounter
   - type: Battery
-    maxCharge: 56250 # 20 seconds of constant fire, 375 rock walls destroyed per full mag. 5 mining pulsers needed to equal its output.
-    startingCharge: 56250
     maxCharge: 56250 # 20 seconds of constant fire, 375 rock walls destroyed per full mag. 5 mining pulsers needed to equal its output.
     startingCharge: 56250
   - type: BatterySelfRecharger
