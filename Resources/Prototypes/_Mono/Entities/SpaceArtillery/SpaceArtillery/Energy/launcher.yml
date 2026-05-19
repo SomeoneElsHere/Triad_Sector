@@ -182,7 +182,6 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 2250
-    autoRechargeRate: 2250
   - type: SpaceArtillery
     powerChargeRate: 700
     powerUsePassive: 100
