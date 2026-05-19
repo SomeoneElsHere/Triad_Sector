@@ -573,7 +573,6 @@
     range: 500
   - type: Gun
     fireRate: 15
-    fireRate: 15
     recoil: 0
     minAngle: 0
     maxAngle: 0
