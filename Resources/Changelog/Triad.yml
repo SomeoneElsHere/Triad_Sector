@@ -975,3 +975,10 @@ Entries:
   id: 2234
   time: '2026-05-26T15:16:25.0000000+00:00'
   url: https://github.com/Triad-Sector/Triad_Sector/pull/120
+- author: Minerva
+  changes:
+    - type: Tweak
+      message: Portable gaslocks now persist on ship save.
+  id: 2235
+  time: '2026-05-26T21:10:55.0000000+00:00'
+  url: https://github.com/Triad-Sector/Triad_Sector/pull/138
