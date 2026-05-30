@@ -1042,3 +1042,10 @@ Entries:
   id: 2243
   time: '2026-05-30T17:23:20.0000000+00:00'
   url: https://github.com/Triad-Sector/Triad_Sector/pull/77
+- author: SquishyEmmaaaa
+  changes:
+    - type: Fix
+      message: Vodka bottles now fit in the booze dispenser.
+  id: 2244
+  time: '2026-05-30T17:27:53.0000000+00:00'
+  url: https://github.com/Triad-Sector/Triad_Sector/pull/158
