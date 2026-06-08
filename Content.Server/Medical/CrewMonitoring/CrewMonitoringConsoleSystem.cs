@@ -75,12 +75,12 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
 
         UpdateUserInterface(uid, component);
     }
-    //yeah I dont like how this method turned out but... (sigh)
-    //it does the following:
-    //Over 100 damage? Play a sound.
+    //The PR does the following.
+    //Over 100 damage? Play a sound to add to overall dread. (explained in PR)
     //Over 128 crew consoles? Start skipping everything to preservere resourses.
-    //Dont play that sound if it is in a 15 radius of another crew monitor.
-    //Dont play that sound if there is a cooldown.
+    //Dont play that sound if it is in a 15 radius of another crew monitor to stop really loud sounds.
+    //Dont play that sound if there is a cooldown to stop really loud sounds.
+    //No sounds if we dont have a sensor; how would the crew console get it IC?
 
     private void SoundCooldown(object? obj) //cooldown for sound
     {
@@ -118,14 +118,14 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
 
             var sound = EntityManager.GetComponent<EmitSoundOnSpawnComponent>(uid);
 
-            if (sound.Sound == null) //obligatory null check since vs wont shut up
+            if (sound.Sound == null) 
             {
                 continue;
             }
-            if (sound.Sound.Params.Volume != 15)
+            if (sound.Sound.Params.Volume != 15) //This sets the volume to -15 from -1000 to allow you to hear it onluy after it spawns.
             {
                 var para = sound.Sound.Params;
-                para.Volume = -15; // restore volume.
+                para.Volume = -15;  
                 sound.Sound.Params = para;
                 RemComp<EmitSoundOnSpawnComponent>(uid);
                 AddComp<EmitSoundOnSpawnComponent>(uid, sound);
@@ -134,7 +134,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             max++; //if there are more than 128 crew monitoring consoles just ignore it
         }
     }
-    private bool FindSuit(TransformChildrenEnumerator enu) //checks if a child of the damaged person has a suit with sensors on them
+    private bool FindSuit(TransformChildrenEnumerator enu) //checks if a child of the damaged person has a suit with sensors on them, if so we skip them because it doesnt really make sense for it to go off when you have no sensors.
     {
         while (enu.MoveNext(out EntityUid mightBeSuit))
         {
