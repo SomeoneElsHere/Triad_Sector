@@ -544,6 +544,13 @@
   - type: ShipRepairable
     repairTime: 4
     repairCost: 8
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Machines/medDanger.ogg
+      params:
+        maximumDistance: 15
+        volume: -1000
+    positional: true
 
 - type: entity
   parent: BaseComputerAiAccess

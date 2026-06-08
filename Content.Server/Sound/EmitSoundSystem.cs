@@ -42,6 +42,14 @@ public sealed class EmitSoundSystem : SharedEmitSoundSystem
         SubscribeLocalEvent<SpamEmitSoundComponent, MapInitEvent>(HandleSpamEmitSoundMapInit);
     }
 
+    /// <summary>
+    /// For emmiting sounds based on boolean logic.
+    /// </summary>
+    public void EmitSoundOverride(EntityUid sound, BaseEmitSoundComponent component)
+    {
+        TryEmitSound(sound, component);
+    }
+
     private void HandleEmitSoundOnTrigger(EntityUid uid, EmitSoundOnTriggerComponent component, TriggerEvent args)
     {
         TryEmitSound(uid, component, args.User, false);

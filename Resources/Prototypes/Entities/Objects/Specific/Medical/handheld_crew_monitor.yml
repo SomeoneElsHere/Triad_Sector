@@ -29,6 +29,14 @@
     - HighRiskItem
   - type: StealTarget
     stealGroup: HandheldCrewMonitor
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Machines/medDanger.ogg
+      params:
+        maximumDistance: 15
+        volume: -1000
+    positional: true
+
 
 - type: entity
   id: HandheldCrewMonitorEmpty
