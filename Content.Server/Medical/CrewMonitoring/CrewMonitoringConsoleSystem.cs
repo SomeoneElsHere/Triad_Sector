@@ -82,19 +82,27 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     //Dont play that sound if there is a cooldown to stop really loud sounds.
     //No sounds if we dont have a sensor; how would the crew console get it IC?
 
-    private void SoundCooldown(object? obj) //cooldown for sound
+
+    /// <summary>
+    /// A cooldown for the sound system so that we don't spam sounds and make our ears bleed.
+    /// </summary>
+    private void SoundCooldown(object? obj)
     {
         canPlaySound = false;
         Thread.Sleep(1000);
         canPlaySound = true;
 
     }
-    private void EnumarateCrewConsoles() //main loop, go through crew consoles and process them
+
+    /// <summary>
+    /// Main loop where we do most of the work for processing each Crew Console entity UID to play a sound at that point.
+    /// </summary>
+    private void EnumarateCrewConsoles()
     {
         int max = 0;
         foreach (EntityUid uid in EntityManager.AllEntityUids<CrewMonitoringConsoleComponent>()) //I dunno how to get all of the crew monitoring systems otherwise
         {
-            if (max > 128) //if there are more than 128 crew monitoring consoles just ignore it
+            if (max > 128) //if there are more than 128 crew monitoring consoles just ignore it to save processing power.
             {
                 continue;
             }
@@ -103,7 +111,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             bool skip = false;
             foreach (EntityCoordinates nongrid in _coords)
             {
-                if (coord1.TryDistance(EntityManager, nongrid, out float dist) && dist < 15) //if dist between 2 crew monitors is less than 15, skip playing it
+                if (coord1.TryDistance(EntityManager, nongrid, out float dist) && dist < 15) //if dist between 2 crew monitors is less than 15, skip playing it since you can already hear it from the other comp.
                 {
 
                     skip = true;
@@ -122,7 +130,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             {
                 continue;
             }
-            if (sound.Sound.Params.Volume != 15) //This sets the volume to -15 from -1000 to allow you to hear it onluy after it spawns.
+            if (sound.Sound.Params.Volume != 15) //This sets the volume to -15 from -1000 to allow you to hear it only after it spawns.
             {
                 var para = sound.Sound.Params;
                 para.Volume = -15;  
@@ -134,7 +142,11 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             max++; //if there are more than 128 crew monitoring consoles just ignore it
         }
     }
-    private bool FindSuit(TransformChildrenEnumerator enu) //checks if a child of the damaged person has a suit with sensors on them, if so we skip them because it doesnt really make sense for it to go off when you have no sensors.
+
+    /// <summary>
+    /// Checks if a child of the damaged person has a suit with sensors on them, if so we skip them because it doesnt really make sense for it to go off when you have no sensors.
+    /// <summary>
+    private bool FindSuit(TransformChildrenEnumerator enu) 
     {
         while (enu.MoveNext(out EntityUid mightBeSuit))
         {
@@ -148,26 +160,34 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
         }
         return false;
     }
-    private void OnDamageChanged(EntityUid eu, MobStateComponent mobState, DamageChangedEvent args) //sound processing but I over engineered it
+
+    /// <summary>
+    /// When an entity takes 100+ damage, play a sound to warn med if it meets the critera:
+    /// Over 128 crew consoles? Start skipping everything to preservere resourses.
+    /// Dont play that sound if it is in a 15 radius of another crew monitor to stop really loud sounds.
+    /// Dont play that sound if there is a cooldown to stop really loud sounds.
+    /// No sounds if we dont have a sensor; how would the crew console get it IC?
+    /// <summary>
+    private void OnDamageChanged(EntityUid eu, MobStateComponent mobState, DamageChangedEvent args) 
     {
-        if (!EntityManager.TryGetComponent<PlayerJobComponent>(eu, out PlayerJobComponent? j)) //only player jobs count
+        if (!EntityManager.TryGetComponent<PlayerJobComponent>(eu, out PlayerJobComponent? j)) //only player jobs count! Guard clause to skip non-crew.
         {
             return;
         }
-        if (!canPlaySound) //cooldown
+        if (!canPlaySound) //cooldown timer boolean is here. If the thread is stil waiting, dont play it a sound.
         {
             return;
         }
         var suitfinder = EntityManager.TransformQuery.Get(eu).Comp.ChildEnumerator;
-        if (!FindSuit(suitfinder))// if the mob doesnt have a suit sensor on, skip it
+        if (!FindSuit(suitfinder))// if the mob doesnt have a suit sensor, how would it play IC?
         {
             return;
         }
         if (args.DamageDelta != null && args.DamageDelta.GetTotal().Value > 10000) //if the change in damage was over 100
         {
-            EnumarateCrewConsoles(); //do main loop
+            EnumarateCrewConsoles(); //do main loop for most proccesing
             _coords.Clear();
-            Thread t = new Thread(new ParameterizedThreadStart(SoundCooldown)); //start cooldown
+            Thread t = new Thread(new ParameterizedThreadStart(SoundCooldown)); //start cooldown thread wait
             t.Start();
         }
     }
