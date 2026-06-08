@@ -37,7 +37,6 @@
         volume: -1000
     positional: true
 
-
 - type: entity
   id: HandheldCrewMonitorEmpty
   parent: HandheldCrewMonitor

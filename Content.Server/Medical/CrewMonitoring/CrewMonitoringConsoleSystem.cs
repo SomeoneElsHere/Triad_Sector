@@ -119,26 +119,24 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
                 }
             }
             _coords.Add(coord1);
+            
             if (skip)
-            {
                 continue;
-            }
 
             var sound = EntityManager.GetComponent<EmitSoundOnSpawnComponent>(uid);
-
-            if (sound.Sound == null) 
-            {
+            if (TryComp<EmitSoundOnSpawnComponent>(uid, out var soundComp) || soundComp.Sound is not { } sound) 
                 continue;
-            }
-            if (sound.Sound.Params.Volume != 15) //This sets the volume to -15 from -1000 to allow you to hear it only after it spawns.
+            
+            if (sound.Params.Volume != 15) //This sets the volume to -15 from -1000 to allow you to hear it only after it spawns.
             {
-                var para = sound.Sound.Params;
+                var para = sound.Params;
                 para.Volume = -15;  
                 sound.Sound.Params = para;
                 RemComp<EmitSoundOnSpawnComponent>(uid);
                 AddComp<EmitSoundOnSpawnComponent>(uid, sound);
             }
-            _emitSound.EmitSoundOverride(uid, sound); //do sound
+            
+            _emitSound.EmitSoundOverride(uid, soundComp); //do sound
             max++; //if there are more than 128 crew monitoring consoles just ignore it
         }
     }

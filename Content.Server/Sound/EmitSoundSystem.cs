@@ -43,7 +43,7 @@ public sealed class EmitSoundSystem : SharedEmitSoundSystem
     }
 
     /// <summary>
-    /// For emmiting sounds based on boolean logic. This can be used to emit a sound whenever you would like,
+    /// For emitting sounds based on boolean logic. This can be used to emit a sound whenever you would like,
     /// or in cases that you just don't want to create a new event.
     /// </summary>
     public void EmitSoundOverride(EntityUid sound, BaseEmitSoundComponent component)
