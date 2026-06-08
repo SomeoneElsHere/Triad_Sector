@@ -178,6 +178,10 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
         {
             return;
         }
+        if (args.DamageDelta == null) //if its null there is no damage.
+        {
+            return;
+        }
         var suitfinder = EntityManager.TransformQuery.Get(eu).Comp.ChildEnumerator;
         if (!FindSuit(suitfinder))// if the mob doesnt have a suit sensor, how would it play IC?
         {
