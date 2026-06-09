@@ -16,6 +16,11 @@
       enum.CrewMonitoringUIKey.Key:
         type: CrewMonitoringBoundUserInterface
   - type: CrewMonitoringConsole
+    warningSound: 
+      params:
+        maximumDistance: 15
+        volume: -15
+      path: /Audio/_Triad/Machines/medDanger.ogg
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: CrewMonitor
@@ -29,11 +34,6 @@
     - HighRiskItem
   - type: StealTarget
     stealGroup: HandheldCrewMonitor
-  - type: Audio
-    fileName: /Audio/_Triad/Machines/medDanger.ogg
-    params:
-        maximumDistance: 15
-        volume: -15
 
 - type: entity
   id: HandheldCrewMonitorEmpty

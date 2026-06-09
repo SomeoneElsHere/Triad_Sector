@@ -535,6 +535,11 @@
         enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
   - type: CrewMonitoringConsole
+    warningSound: 
+      params:
+        maximumDistance: 15
+        volume: -15
+      path: /Audio/_Triad/Machines/medDanger.ogg
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: CrewMonitor
@@ -544,11 +549,6 @@
   - type: ShipRepairable
     repairTime: 4
     repairCost: 8
-  - type: Audio
-    fileName: /Audio/_Triad/Machines/medDanger.ogg
-    params:
-        maximumDistance: 15
-        volume: -15
 
 - type: entity
   parent: BaseComputerAiAccess

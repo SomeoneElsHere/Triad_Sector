@@ -130,10 +130,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             _coords.Add(coord1);
             if (skip)
                 continue;
-            var sound = EntityManager.GetComponent<AudioComponent>(uid);
-            SoundPathSpecifier s = new SoundPathSpecifier(sound.FileName, sound.Params);
-            s.Params = sound.Params;
-            _emitSound.PlayPvs(s,Transform(uid).Coordinates);
+            _emitSound.PlayPvs(monitorComp.WarningSound, Transform(uid).Coordinates);
             max++; //if there are more than 128 crew monitoring consoles just ignore it
         }
     }

@@ -1,4 +1,5 @@
 using Content.Shared.Medical.SuitSensor;
+using Robust.Shared.Audio;
 
 namespace Content.Server.Medical.CrewMonitoring;
 
@@ -16,4 +17,7 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     /// </summary>
     [DataField("sensorTimeout"), ViewVariables(VVAccess.ReadWrite)]
     public float SensorTimeout = 10f;
+
+    [ViewVariables(VVAccess.ReadWrite), DataField("warningSound")]
+    public SoundSpecifier? WarningSound;
 }
