@@ -10,6 +10,7 @@ using Content.Server.Sound;
 using Content.Shared.Damage;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.DeviceNetwork.Events;
+using Content.Shared.Inventory;
 using Content.Shared.Medical.CrewMonitoring;
 using Content.Shared.Medical.SuitSensor;
 using Content.Shared.Mind.Components;
@@ -17,8 +18,13 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Pinpointer;
 using Content.Shared.Sound.Components;
+using Microsoft.EntityFrameworkCore;
+using Robust.Server.Audio;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Components;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Utility;
@@ -29,7 +35,9 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     [Dependency] private readonly PowerCellSystem _cell = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
 
-    [Dependency] private readonly EmitSoundSystem _emitSound = default!;
+    [Dependency] private readonly SharedAudioSystem _emitSound = default!;
+
+    [Dependency] private readonly InventorySystem _inventory = default!;
 
     bool canPlaySound = true;
 
@@ -75,7 +83,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
 
         UpdateUserInterface(uid, component);
     }
-    //The PR does the following.
+    // Triad
     //Over 100 damage? Play a sound to add to overall dread. (explained in PR)
     //Over 128 crew consoles? Start skipping everything to preservere resourses.
     //Dont play that sound if it is in a 15 radius of another crew monitor to stop really loud sounds.
@@ -89,7 +97,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     private void SoundCooldown(object? obj)
     {
         canPlaySound = false;
-        Thread.Sleep(1000);
+        Thread.Sleep(15000);
         canPlaySound = true;
 
     }
@@ -100,13 +108,14 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     private void EnumarateCrewConsoles()
     {
         int max = 0;
-        foreach (EntityUid uid in EntityManager.AllEntityUids<CrewMonitoringConsoleComponent>()) //I dunno how to get all of the crew monitoring systems otherwise
+        var query = EntityQueryEnumerator<CrewMonitoringConsoleComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var monitorComp, out var xform))
         {
             if (max > 128) //if there are more than 128 crew monitoring consoles just ignore it to save processing power.
             {
                 continue;
             }
-            var transf = EntityManager.TransformQuery.Get(uid).Comp;
+            var transf = xform;
             var coord1 = transf.Coordinates;
             bool skip = false;
             foreach (EntityCoordinates nongrid in _coords)
@@ -119,24 +128,12 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
                 }
             }
             _coords.Add(coord1);
-            
             if (skip)
                 continue;
-
-            var sound = EntityManager.GetComponent<EmitSoundOnSpawnComponent>(uid);
-            if (TryComp<EmitSoundOnSpawnComponent>(uid, out var soundComp) || soundComp.Sound is not { } sound) 
-                continue;
-            
-            if (sound.Params.Volume != 15) //This sets the volume to -15 from -1000 to allow you to hear it only after it spawns.
-            {
-                var para = sound.Params;
-                para.Volume = -15;  
-                sound.Sound.Params = para;
-                RemComp<EmitSoundOnSpawnComponent>(uid);
-                AddComp<EmitSoundOnSpawnComponent>(uid, sound);
-            }
-            
-            _emitSound.EmitSoundOverride(uid, soundComp); //do sound
+            var sound = EntityManager.GetComponent<AudioComponent>(uid);
+            SoundPathSpecifier s = new SoundPathSpecifier(sound.FileName, sound.Params);
+            s.Params = sound.Params;
+            _emitSound.PlayPvs(s,Transform(uid).Coordinates);
             max++; //if there are more than 128 crew monitoring consoles just ignore it
         }
     }
@@ -144,11 +141,11 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     /// <summary>
     /// Checks if a child of the damaged person has a suit with sensors on them, if so we skip them because it doesnt really make sense for it to go off when you have no sensors.
     /// <summary>
-    private bool FindSuit(TransformChildrenEnumerator enu) 
+    private bool FindSuit(InventorySystem.InventorySlotEnumerator enu) 
     {
-        while (enu.MoveNext(out EntityUid mightBeSuit))
+        while (enu.MoveNext(out ContainerSlot? mightBeSuit))
         {
-            if (EntityManager.TryGetComponent<SuitSensorComponent>(mightBeSuit, out SuitSensorComponent? _suit))
+            if (mightBeSuit != null && mightBeSuit.ContainedEntity != null && EntityManager.TryGetComponent<SuitSensorComponent>(mightBeSuit.ContainedEntity, out SuitSensorComponent? _suit))
             {
                 if (_suit.Mode != SuitSensorMode.SensorOff && !_suit.Jammed)
                 {
@@ -180,7 +177,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
         {
             return;
         }
-        var suitfinder = EntityManager.TransformQuery.Get(eu).Comp.ChildEnumerator;
+        var suitfinder = _inventory.GetSlotEnumerator(eu, SlotFlags.OUTERCLOTHING);
         if (!FindSuit(suitfinder))// if the mob doesnt have a suit sensor, how would it play IC?
         {
             return;
@@ -193,7 +190,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             t.Start();
         }
     }
-    //end changes
+    //end Triad
     private void UpdateUserInterface(EntityUid uid, CrewMonitoringConsoleComponent? component = null)
     {
         if (!Resolve(uid, ref component))

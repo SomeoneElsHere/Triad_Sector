@@ -42,15 +42,6 @@ public sealed class EmitSoundSystem : SharedEmitSoundSystem
         SubscribeLocalEvent<SpamEmitSoundComponent, MapInitEvent>(HandleSpamEmitSoundMapInit);
     }
 
-    /// <summary>
-    /// For emitting sounds based on boolean logic. This can be used to emit a sound whenever you would like,
-    /// or in cases that you just don't want to create a new event.
-    /// </summary>
-    public void EmitSoundOverride(EntityUid sound, BaseEmitSoundComponent component)
-    {
-        TryEmitSound(sound, component);
-    }
-
     private void HandleEmitSoundOnTrigger(EntityUid uid, EmitSoundOnTriggerComponent component, TriggerEvent args)
     {
         TryEmitSound(uid, component, args.User, false);
