@@ -133,7 +133,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             if (message == null)
                 continue;
             //if there are multiple deaths per time, log them all.
-            if (_multipleTime == _timing.CurTime)
+            if (_timing.CurTime < _multipleTime + monitorComp.ProcessDelay)
                 _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
             //if next sound is new, play it like normal and set the next sound interval. If it is old, do the same.
             else if (monitorComp.NextSound == null || _timing.CurTime >= monitorComp.NextSound)

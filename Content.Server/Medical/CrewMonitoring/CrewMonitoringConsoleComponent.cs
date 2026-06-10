@@ -35,6 +35,7 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
 
     public TimeSpan Cooldown = TimeSpan.FromSeconds(15);
 
+
     /// <summary>
     ///     Used as the warning sound for the console.
     /// </summary>
@@ -42,4 +43,11 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     [DataField]
     public SoundSpecifier? WarningSound;
 
+    /// <summary>
+    ///     Used as the delay for multiple people to be processed for the console.
+    /// </summary>
+
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+
+    public TimeSpan ProcessDelay = TimeSpan.FromSeconds(1);
 }
