@@ -28,6 +28,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Utility;
+
 namespace Content.Server.Medical.CrewMonitoring;
 
 public sealed class CrewMonitoringConsoleSystem : EntitySystem
@@ -142,12 +143,10 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     {
         while (enu.MoveNext(out ContainerSlot? mightBeSuit))
         {
-            if (mightBeSuit != null && mightBeSuit.ContainedEntity != null && EntityManager.TryGetComponent<SuitSensorComponent>(mightBeSuit.ContainedEntity, out SuitSensorComponent? _suit))
+            if (mightBeSuit != null && mightBeSuit.ContainedEntity != null && TryComp<SuitSensorComponent>(mightBeSuit.ContainedEntity, out SuitSensorComponent? _suit))
             {
                 if (_suit.Mode != SuitSensorMode.SensorOff && !_suit.Jammed)
-                {
                     return true;
-                }
             }
         }
         return false;
@@ -162,23 +161,18 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     /// <summary>
     private void OnDamageChanged(EntityUid eu, MobStateComponent mobState, DamageChangedEvent args) 
     {
-        if (!EntityManager.TryGetComponent<PlayerJobComponent>(eu, out PlayerJobComponent? j)) //only player jobs count! Guard clause to skip non-crew.
-        {
+        if (!TryComp<PlayerJobComponent>(eu, out PlayerJobComponent? j)) //only player jobs count! Guard clause to skip non-crew.
             return;
-        }
+
         if (!canPlaySound) //cooldown timer boolean is here. If the thread is stil waiting, dont play it a sound.
-        {
             return;
-        }
+
         if (args.DamageDelta == null) //if its null there is no damage.
-        {
             return;
-        }
-        var suitfinder = _inventory.GetSlotEnumerator(eu, SlotFlags.OUTERCLOTHING);
+
+        var suitfinder = _inventory.GetSlotEnumerator(eu, SlotFlags.INNERCLOTHING);
         if (!FindSuit(suitfinder))// if the mob doesnt have a suit sensor, how would it play IC?
-        {
             return;
-        }
         if (args.DamageDelta != null && args.DamageDelta.GetTotal().Value > 10000) //if the change in damage was over 100
         {
             EnumarateCrewConsoles(); //do main loop for most proccesing
