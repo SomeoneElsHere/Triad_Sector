@@ -2,6 +2,7 @@ using System.Linq;
 using System.Threading;
 using System.Xml;
 using Content.Server._NF.CryoSleep;
+using Content.Server.Chat.Systems;
 using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Medical.SuitSensors;
@@ -27,6 +28,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Medical.CrewMonitoring;
@@ -36,13 +38,18 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     [Dependency] private readonly PowerCellSystem _cell = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
 
-    [Dependency] private readonly SharedAudioSystem _emitSound = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     [Dependency] private readonly InventorySystem _inventory = default!;
 
-    bool canPlaySound = true;
+    [Dependency] private IGameTiming _timing = default!;
+
+    [Dependency] private readonly ChatSystem _chat = default!;
+
 
     List<EntityCoordinates> _coords = new List<EntityCoordinates>();
+
+    private TimeSpan _multipleTime = new TimeSpan();
 
     public override void Initialize()
     {
@@ -90,23 +97,12 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     //Dont play that sound if it is in a 15 radius of another crew monitor to stop really loud sounds.
     //Dont play that sound if there is a cooldown to stop really loud sounds.
     //No sounds if we dont have a sensor; how would the crew console get it IC?
-
-
-    /// <summary>
-    /// A cooldown for the sound system so that we don't spam sounds and make our ears bleed.
-    /// </summary>
-    private void SoundCooldown(object? obj)
-    {
-        canPlaySound = false;
-        Thread.Sleep(15000);
-        canPlaySound = true;
-
-    }
+    //Send a IC message saying what crew got hurt so they can know.
 
     /// <summary>
     /// Main loop where we do most of the work for processing each Crew Console entity UID to play a sound at that point.
     /// </summary>
-    private void EnumarateCrewConsoles()
+    private void EnumarateCrewConsoles(EntityUid eu)
     {
         int max = 0;
         var query = EntityQueryEnumerator<CrewMonitoringConsoleComponent, TransformComponent>();
@@ -131,7 +127,22 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             _coords.Add(coord1);
             if (skip)
                 continue;
-            _emitSound.PlayPvs(monitorComp.WarningSound, Transform(uid).Coordinates);
+            //check if we have the string first.
+            if (!Loc.TryGetString("message-crit-damage-crew-monitor", out string? message, ("user", MetaData(eu).EntityName)))
+                continue;
+            if (message == null)
+                continue;
+            //if there are multiple deaths per time, log them all.
+            if (_multipleTime == _timing.CurTime)
+                _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
+            //if next sound is new, play it like normal and set the next sound interval. If it is old, do the same.
+            else if (monitorComp.NextSound == null || _timing.CurTime >= monitorComp.NextSound)
+            {
+                _multipleTime = _timing.CurTime; //create new curtime
+                monitorComp.NextSound = _timing.CurTime + monitorComp.Cooldown;
+                _audio.PlayPvs(monitorComp.WarningSound, Transform(uid).Coordinates);
+                _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
+            }
             max++; //if there are more than 128 crew monitoring consoles just ignore it
         }
     }
@@ -158,13 +169,11 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     /// Dont play that sound if it is in a 15 radius of another crew monitor to stop really loud sounds.
     /// Dont play that sound if there is a cooldown to stop really loud sounds.
     /// No sounds if we dont have a sensor; how would the crew console get it IC?
+    /// Also Send a IC message saying what crew got hurt so they can know.
     /// <summary>
     private void OnDamageChanged(EntityUid eu, MobStateComponent mobState, DamageChangedEvent args) 
     {
         if (!TryComp<PlayerJobComponent>(eu, out PlayerJobComponent? j)) //only player jobs count! Guard clause to skip non-crew.
-            return;
-
-        if (!canPlaySound) //cooldown timer boolean is here. If the thread is stil waiting, dont play it a sound.
             return;
 
         if (args.DamageDelta == null) //if its null there is no damage.
@@ -175,10 +184,8 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             return;
         if (args.DamageDelta != null && args.DamageDelta.GetTotal().Value > 10000) //if the change in damage was over 100
         {
-            EnumarateCrewConsoles(); //do main loop for most proccesing
+            EnumarateCrewConsoles(eu); //do main loop for most proccesing
             _coords.Clear();
-            Thread t = new Thread(new ParameterizedThreadStart(SoundCooldown)); //start cooldown thread wait
-            t.Start();
         }
     }
     //end Triad

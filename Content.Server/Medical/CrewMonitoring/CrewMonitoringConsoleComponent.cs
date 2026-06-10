@@ -1,5 +1,6 @@
 using Content.Shared.Medical.SuitSensor;
 using Robust.Shared.Audio;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.Medical.CrewMonitoring;
 
@@ -18,6 +19,27 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     [DataField("sensorTimeout"), ViewVariables(VVAccess.ReadWrite)]
     public float SensorTimeout = 10f;
 
-    [ViewVariables(VVAccess.ReadWrite), DataField("warningSound")]
+    /// <summary>
+    ///     Used for the time for the next sound to play.
+    /// </summary>
+
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+
+    public TimeSpan? NextSound;
+
+    /// <summary>
+    ///     Used as the cooldown time for the next sound.
+    /// </summary>
+
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+
+    public TimeSpan Cooldown = TimeSpan.FromSeconds(15);
+
+    /// <summary>
+    ///     Used as the warning sound for the console.
+    /// </summary>
+
+    [DataField]
     public SoundSpecifier? WarningSound;
+
 }

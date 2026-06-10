@@ -543,6 +543,9 @@
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: CrewMonitor
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Borg
 #  - type: WirelessNetworkConnection
 #    range: 1200
   # Mono
