@@ -152,9 +152,9 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     {
         while (enu.MoveNext(out ContainerSlot? mightBeSuit))
         {
-            if (mightBeSuit != null && mightBeSuit.ContainedEntity != null && TryComp<SuitSensorComponent>(mightBeSuit.ContainedEntity, out SuitSensorComponent? _suit))
+            if (mightBeSuit != null && mightBeSuit.ContainedEntity != null && TryComp<SuitSensorComponent>(mightBeSuit.ContainedEntity, out SuitSensorComponent? suit))
             {
-                if (_suit.Mode != SuitSensorMode.SensorOff && !_suit.Jammed)
+                if (_suit.Mode != SuitSensorMode.SensorOff && !suit.Jammed)
                     return true;
             }
         }
