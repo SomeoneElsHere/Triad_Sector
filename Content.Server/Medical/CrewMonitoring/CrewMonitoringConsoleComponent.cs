@@ -12,40 +12,19 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     ///     List of all currently connected sensors to this console.
     /// </summary>
     public Dictionary<string, SuitSensorStatus> ConnectedSensors = new();
-
     /// <summary>
     ///     After what time sensor consider to be lost.
     /// </summary>
     [DataField("sensorTimeout"), ViewVariables(VVAccess.ReadWrite)]
     public float SensorTimeout = 10f;
-
     /// <summary>
     ///     Used for the time for the next sound to play.
     /// </summary>
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     public TimeSpan? NextSound;
-
-    /// <summary>
-    ///     Used as the cooldown time for the next sound.
-    /// </summary>
-
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
-
-    public TimeSpan Cooldown = TimeSpan.FromSeconds(15);
-
-
     /// <summary>
     ///     Used as the warning sound for the console.
     /// </summary>
-
     [DataField]
     public SoundSpecifier? WarningSound;
-
-    /// <summary>
-    ///     Used as the delay for multiple people to be processed for the console.
-    /// </summary>
-
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
-
-    public TimeSpan ProcessDelay = TimeSpan.FromSeconds(1);
 }
