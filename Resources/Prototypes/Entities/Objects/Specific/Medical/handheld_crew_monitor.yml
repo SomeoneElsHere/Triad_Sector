@@ -15,7 +15,7 @@
     interfaces:
       enum.CrewMonitoringUIKey.Key:
         type: CrewMonitoringBoundUserInterface
-  - type: CrewMonitoringConsole
+  - type: CrewMonitoringConsole # Triad - added sound for high damage patients
     warningSound: 
       params:
         maximumDistance: 15
