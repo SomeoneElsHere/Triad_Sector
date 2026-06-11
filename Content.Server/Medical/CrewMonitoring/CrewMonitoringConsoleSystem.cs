@@ -44,7 +44,8 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
 
     List<EntityCoordinates> _coords = new List<EntityCoordinates>();
 
-    private TimeSpan _multipleTime = new TimeSpan();
+    private TimeSpan _multipleDeathsTime = new TimeSpan();
+    
     public override void Initialize()
     {
         base.Initialize();
