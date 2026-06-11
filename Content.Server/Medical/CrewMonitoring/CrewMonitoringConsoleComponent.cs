@@ -24,7 +24,6 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     /// </summary>
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
-
     public TimeSpan? NextSound;
 
     /// <summary>
