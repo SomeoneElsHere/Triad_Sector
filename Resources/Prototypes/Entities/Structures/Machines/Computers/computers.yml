@@ -535,7 +535,7 @@
         enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
   - type: CrewMonitoringConsole
-    warningSound: 
+    warningSound: # Triad - added sound message for high damage patients
       params:
         maximumDistance: 15
         volume: -15
