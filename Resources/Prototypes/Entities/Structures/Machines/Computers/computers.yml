@@ -543,7 +543,7 @@
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: CrewMonitor
-  - type: Speech
+  - type: Speech # Triad - added chat message for high damage patients
     speechVerb: Robotic
     speechSounds: Borg
 #  - type: WirelessNetworkConnection
