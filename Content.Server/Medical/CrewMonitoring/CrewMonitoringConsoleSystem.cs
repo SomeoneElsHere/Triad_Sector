@@ -42,7 +42,6 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
 
-
     List<EntityCoordinates> _coords = new List<EntityCoordinates>();
 
     private TimeSpan _multipleTime = new TimeSpan();
