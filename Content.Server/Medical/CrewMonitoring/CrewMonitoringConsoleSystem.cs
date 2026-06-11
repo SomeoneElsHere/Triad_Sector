@@ -81,7 +81,6 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
 
         component.ConnectedSensors = sensorStatus;
         UpdateUserInterface(uid, component);
-
     }
 
     private void OnUIOpened(EntityUid uid, CrewMonitoringConsoleComponent component, BoundUIOpenedEvent args)
