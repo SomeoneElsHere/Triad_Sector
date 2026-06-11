@@ -177,8 +177,8 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
         if (args.DamageDelta == null) //if its null there is no damage.
             return;
 
-        var suitfinder = _inventory.GetSlotEnumerator(eu, SlotFlags.INNERCLOTHING);
-        if (!FindSuit(suitfinder))// if the mob doesnt have a suit sensor, how would it play IC?
+        var suitFinder = _inventory.GetSlotEnumerator(eu, SlotFlags.INNERCLOTHING);
+        if (!FindSuit(suitFinder))// if the mob doesnt have a suit sensor, how would it play IC?
             return;
 
         if (args.DamageDelta != null && args.DamageDelta.GetTotal().Value > 10000) //if the change in damage was over 100
