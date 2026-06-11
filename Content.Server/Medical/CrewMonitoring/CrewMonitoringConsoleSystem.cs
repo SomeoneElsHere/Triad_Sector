@@ -37,13 +37,9 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
 {
     [Dependency] private readonly PowerCellSystem _cell = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-
     [Dependency] private readonly InventorySystem _inventory = default!;
-
     [Dependency] private IGameTiming _timing = default!;
-
     [Dependency] private readonly ChatSystem _chat = default!;
 
 
