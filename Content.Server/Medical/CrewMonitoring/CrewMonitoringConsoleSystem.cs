@@ -117,6 +117,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
                 }
             }
             _coords.Add(coord1);
+
             if (skip)
                 continue;
 
