@@ -1,35 +1,22 @@
 using System.Linq;
-using System.Threading;
 using System.Xml;
 using Content.Server._NF.CryoSleep;
 using Content.Server.Chat.Systems;
-using Content.Server.DeviceNetwork;
-using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Medical.SuitSensors;
 using Content.Server.PowerCell;
-using Content.Server.Sound;
 using Content.Shared.Damage;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Medical.CrewMonitoring;
 using Content.Shared.Medical.SuitSensor;
-using Content.Shared.Mind.Components;
-using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Pinpointer;
-using Content.Shared.Sound.Components;
-using Microsoft.EntityFrameworkCore;
-using Robust.Server.Audio;
 using Robust.Server.GameObjects;
-using Robust.Shared.Audio;
-using Robust.Shared.Audio.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
-using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
-using Robust.Shared.Utility;
 
 namespace Content.Server.Medical.CrewMonitoring;
 
@@ -43,7 +30,6 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     [Dependency] private readonly ChatSystem _chat = default!;
 
     List<EntityCoordinates> _coords = new List<EntityCoordinates>();
-
     private TimeSpan _multipleDeathsTime = new TimeSpan();
     
     public override void Initialize()
@@ -86,9 +72,9 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
         UpdateUserInterface(uid, component);
     }
     // Triad
-    //Over 100 damage? Play a sound to add to overall dread. (explained in PR)
+    //Over TriggerSndDamageThreshold damage? Play a sound to add to overall dread. (explained in PR)
     //Over 128 crew consoles? Start skipping everything to preservere resourses.
-    //Dont play that sound if it is in a 15 radius of another crew monitor to stop really loud sounds.
+    //Dont play that sound if it is in a sound radius of another crew monitor to stop really loud sounds.
     //Dont play that sound if there is a cooldown to stop really loud sounds.
     //No sounds if we dont have a sensor; how would the crew console get it IC?
     //Send a IC message saying what crew got hurt so they can know.
@@ -96,7 +82,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     /// <summary>
     /// Main loop where we do most of the work for processing each Crew Console entity UID to play a sound at that point.
     /// </summary>
-    private void EnumarateCrewConsoles(EntityUid eu)
+    private void EnumarateCrewConsoles(EntityUid eu, DamageSpecifier damageDelta)
     {
         int max = 0;
         var query = EntityQueryEnumerator<CrewMonitoringConsoleComponent, TransformComponent>();
@@ -105,13 +91,19 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             if (max > 128) //if there are more than 128 crew monitoring consoles just ignore it to save processing power.
                 continue;
 
+            if (damageDelta.GetTotal().Value < monitorComp.TriggerSndDamageThreshold * 100) //if the change in damage was not over TriggerSndDamageThreshold, skip it (It is a FixedPoint2 so the value is shifted left twice then rounded)
+                continue;
+
+            if (monitorComp.WarningSound == null)
+                continue;
+
             var transf = xform;
             var coord1 = transf.Coordinates;
             bool skip = false;
 
             foreach (EntityCoordinates nongrid in _coords)
             {
-                if (coord1.TryDistance(EntityManager, nongrid, out float dist) && dist < 15) //if dist between 2 crew monitors is less than 15, skip playing it since you can already hear it from the other comp.
+                if (coord1.TryDistance(EntityManager, nongrid, out float dist) && dist < monitorComp.WarningSound.Params.MaxDistance) //if dist between 2 crew monitors is less than the sound radius, skip playing it since you can already hear it from the other comp.
                 {
                     skip = true;
                     break;
@@ -132,6 +124,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             //if there are multiple deaths per time, log them all.
             if (_timing.CurTime < _multipleDeathsTime + monitorComp.ProcessDelay)
                 _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
+
             //if next sound is new, play it like normal and set the next sound interval. If it is old, do the same.
             else if (monitorComp.NextSound == null || _timing.CurTime >= monitorComp.NextSound)
             {
@@ -148,13 +141,13 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     /// <summary>
     /// Checks if a child of the damaged person has a suit with sensors on them, if so we skip them because it doesnt really make sense for it to go off when you have no sensors.
     /// <summary>
-    private bool FindSuit(InventorySystem.InventorySlotEnumerator enu) 
+    private bool FindSuit(InventorySystem.InventorySlotEnumerator enu)
     {
         while (enu.MoveNext(out ContainerSlot? mightBeSuit))
         {
             if (mightBeSuit != null && mightBeSuit.ContainedEntity != null && TryComp<SuitSensorComponent>(mightBeSuit.ContainedEntity, out SuitSensorComponent? suit))
             {
-                if (_suit.Mode != SuitSensorMode.SensorOff && !suit.Jammed)
+                if (suit.Mode != SuitSensorMode.SensorOff && !suit.Jammed)
                     return true;
             }
         }
@@ -162,9 +155,9 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     }
 
     /// <summary>
-    /// When an entity takes 100+ damage, play a sound to warn med if it meets the critera:
+    /// When an entity takes over TriggerSndDamageThreshold damage, play a sound to warn med if it meets the critera:
     /// Over 128 crew consoles? Start skipping everything to preservere resourses.
-    /// Dont play that sound if it is in a 15 radius of another crew monitor to stop really loud sounds.
+    /// Dont play that sound if it is in the sound radius of another crew monitor to stop really loud sounds.
     /// Dont play that sound if there is a cooldown to stop really loud sounds.
     /// No sounds if we dont have a sensor; how would the crew console get it IC?
     /// Also Send a IC message saying what crew got hurt so they can know.
@@ -181,9 +174,10 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
         if (!FindSuit(suitFinder))// if the mob doesnt have a suit sensor, how would it play IC?
             return;
 
-        if (args.DamageDelta != null && args.DamageDelta.GetTotal().Value > 10000) //if the change in damage was over 100
+        if (args.DamageDelta != null)
         {
-            EnumarateCrewConsoles(eu); //do main loop for most proccesing
+            DamageSpecifier damageDelta = args.DamageDelta;
+            EnumarateCrewConsoles(eu, damageDelta); //do main loop for most proccesing
             _coords.Clear();
         }
     }

@@ -201,8 +201,3 @@
   license: "CC-BY-3.0"
   copyright: "Created by Tomlija, converted to OGG and modified by themias."
   source: "https://freesound.org/people/Tomlija/sounds/99565/"
-
-- files: ["medDanger.ogg"]
-  license: "CC0-1.0"
-  copyright: "Created by SomeoneElsHere in Audacity"
-  source: "https://github.com/Triad-Sector/Triad_Sector/pull/192"

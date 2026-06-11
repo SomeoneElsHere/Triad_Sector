@@ -42,4 +42,10 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     /// </summary>
     [DataField]
     public TimeSpan ProcessDelay = TimeSpan.FromSeconds(1);
+
+    /// <summary>
+    ///     Used as the damage threshold for the sound
+    /// </summary>
+    [DataField]
+    public int TriggerSndDamageThreshold = 100;
 }
