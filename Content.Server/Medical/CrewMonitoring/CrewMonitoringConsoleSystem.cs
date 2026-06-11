@@ -125,14 +125,14 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
                 continue;
             if (message == null)
                 continue;
-            //if there are multiple deaths per time, log them all. (Nonzero Timespan is not in prototype since that causes issues on build)
-            if (_timing.CurTime < _multipleTime + TimeSpan.FromSeconds(1))
+            //if there are multiple deaths per time, log them all.
+            if (_timing.CurTime < _multipleTime + monitorComp.ProcessDelay)
                 _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
             //if next sound is new, play it like normal and set the next sound interval. If it is old, do the same.
             else if (monitorComp.NextSound == null || _timing.CurTime >= monitorComp.NextSound)
             {
                 _multipleTime = _timing.CurTime; //create new curtime
-                monitorComp.NextSound = _timing.CurTime + TimeSpan.FromSeconds(15);
+                monitorComp.NextSound = _timing.CurTime + monitorComp.Cooldown;
                 _audio.PlayPvs(monitorComp.WarningSound, Transform(uid).Coordinates);
                 _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
             }

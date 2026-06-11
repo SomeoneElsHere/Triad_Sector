@@ -23,8 +23,18 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     public TimeSpan? NextSound;
     /// <summary>
+    ///     Used as the cooldown time for the next sound.
+    /// </summary>
+    [DataField]
+    public TimeSpan Cooldown = TimeSpan.FromSeconds(15);
+    /// <summary>
     ///     Used as the warning sound for the console.
     /// </summary>
     [DataField]
     public SoundSpecifier? WarningSound;
+    /// <summary>
+    ///     Used as the delay for multiple people to be processed for the console.
+    /// </summary>
+    [DataField]
+    public TimeSpan ProcessDelay = TimeSpan.FromSeconds(1);
 }
