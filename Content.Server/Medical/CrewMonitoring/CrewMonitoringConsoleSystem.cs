@@ -105,14 +105,15 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             {
                 continue;
             }
+
             var transf = xform;
             var coord1 = transf.Coordinates;
             bool skip = false;
+
             foreach (EntityCoordinates nongrid in _coords)
             {
                 if (coord1.TryDistance(EntityManager, nongrid, out float dist) && dist < 15) //if dist between 2 crew monitors is less than 15, skip playing it since you can already hear it from the other comp.
                 {
-
                     skip = true;
                     break;
                 }
@@ -120,14 +121,18 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             _coords.Add(coord1);
             if (skip)
                 continue;
+
             //check if we have the string first.
             if (!Loc.TryGetString("message-crit-damage-crew-monitor", out string? message, ("user", MetaData(eu).EntityName)))
                 continue;
+
             if (message == null)
                 continue;
+
             //if there are multiple deaths per time, log them all.
             if (_timing.CurTime < _multipleTime + monitorComp.ProcessDelay)
                 _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
+
             //if next sound is new, play it like normal and set the next sound interval. If it is old, do the same.
             else if (monitorComp.NextSound == null || _timing.CurTime >= monitorComp.NextSound)
             {
@@ -136,6 +141,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
                 _audio.PlayPvs(monitorComp.WarningSound, Transform(uid).Coordinates);
                 _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
             }
+
             max++; //if there are more than 128 crew monitoring consoles just ignore it
         }
     }
@@ -168,11 +174,14 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     {
         if (!TryComp<PlayerJobComponent>(eu, out PlayerJobComponent? j)) //only player jobs count! Guard clause to skip non-crew.
             return;
+
         if (args.DamageDelta == null) //if its null there is no damage.
             return;
+
         var suitfinder = _inventory.GetSlotEnumerator(eu, SlotFlags.INNERCLOTHING);
         if (!FindSuit(suitfinder))// if the mob doesnt have a suit sensor, how would it play IC?
             return;
+
         if (args.DamageDelta != null && args.DamageDelta.GetTotal().Value > 10000) //if the change in damage was over 100
         {
             EnumarateCrewConsoles(eu); //do main loop for most proccesing
@@ -184,12 +193,16 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     {
         if (!Resolve(uid, ref component))
             return;
+
         if (!_uiSystem.IsUiOpen(uid, CrewMonitoringUIKey.Key))
             return;
+
         // The grid must have a NavMapComponent to visualize the map in the UI
         var xform = Transform(uid);
+
         if (xform.GridUid != null)
             EnsureComp<NavMapComponent>(xform.GridUid.Value);
+
         // Update all sensors info
         var allSensors = component.ConnectedSensors.Values.ToList();
         _uiSystem.SetUiState(uid, CrewMonitoringUIKey.Key, new CrewMonitoringState(allSensors));
