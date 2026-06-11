@@ -135,7 +135,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             //if next sound is new, play it like normal and set the next sound interval. If it is old, do the same.
             else if (monitorComp.NextSound == null || _timing.CurTime >= monitorComp.NextSound)
             {
-                _multipleTime = _timing.CurTime; //create new curtime
+                _multipleDeathsTime = _timing.CurTime; //create new curtime
                 monitorComp.NextSound = _timing.CurTime + monitorComp.Cooldown;
                 _audio.PlayPvs(monitorComp.WarningSound, Transform(uid).Coordinates);
                 _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
