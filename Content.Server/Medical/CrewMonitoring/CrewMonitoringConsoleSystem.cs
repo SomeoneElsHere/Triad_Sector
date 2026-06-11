@@ -102,9 +102,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
         while (query.MoveNext(out var uid, out var monitorComp, out var xform))
         {
             if (max > 128) //if there are more than 128 crew monitoring consoles just ignore it to save processing power.
-            {
                 continue;
-            }
 
             var transf = xform;
             var coord1 = transf.Coordinates;
