@@ -22,7 +22,6 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     /// <summary>
     ///     Used for the time for the next sound to play.
     /// </summary>
-
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     public TimeSpan? NextSound;
 
