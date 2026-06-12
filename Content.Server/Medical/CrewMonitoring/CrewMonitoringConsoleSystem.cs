@@ -125,7 +125,6 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             {
                 _multipleDeathsTime = _timing.CurTime; //create new curtime
                 monitorComp.NextSound = _timing.CurTime + monitorComp.Cooldown;
-                //_audio.PlayPvs(monitorComp.WarningSound, Transform(uid).Coordinates, monitorComp.WarningSound.Params);
                 _audio.PlayPvs(monitorComp.WarningSound, uid);
                 _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
             }
