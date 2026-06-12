@@ -11,7 +11,7 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     /// <summary>
     ///     List of all currently connected sensors to this console.
     /// </summary>
-    public Dictionary<string, SuitSensorStatus> ConnectedSensors = new();
+    public Dictionary<string, SuitSensorStatus> ConnectedSensors = new(); 
     
     /// <summary>
     ///     After what time sensor consider to be lost.
@@ -23,7 +23,7 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     ///     Used for the time for the next sound to play.
     /// </summary>
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
-    public TimeSpan? NextSound;
+    public TimeSpan? NextSound = null;
 
     /// <summary>
     ///     Used as the cooldown time for the next sound.

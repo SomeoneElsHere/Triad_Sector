@@ -30,8 +30,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     [Dependency] private readonly ChatSystem _chat = default!;
 
     List<EntityCoordinates> _coords = new List<EntityCoordinates>();
-    private TimeSpan _multipleDeathsTime = new TimeSpan();
-    
+    private TimeSpan? _multipleDeathsTime = null;
     public override void Initialize()
     {
         base.Initialize();
@@ -121,18 +120,22 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             if (message == null)
                 continue;
 
-            //if there are multiple deaths per time, log them all.
-            if (_timing.CurTime < _multipleDeathsTime + monitorComp.ProcessDelay)
-                _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
-
             //if next sound is new, play it like normal and set the next sound interval. If it is old, do the same.
-            else if (monitorComp.NextSound == null || _timing.CurTime >= monitorComp.NextSound)
+            if ((monitorComp.NextSound == null || _timing.CurTime >= monitorComp.NextSound) && _multipleDeathsTime == null)
             {
                 _multipleDeathsTime = _timing.CurTime; //create new curtime
                 monitorComp.NextSound = _timing.CurTime + monitorComp.Cooldown;
-                _audio.PlayPvs(monitorComp.WarningSound, Transform(uid).Coordinates);
+                //_audio.PlayPvs(monitorComp.WarningSound, Transform(uid).Coordinates, monitorComp.WarningSound.Params);
+                _audio.PlayPvs(monitorComp.WarningSound, uid);
                 _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
             }
+
+            //if there are multiple deaths per time, log them all.
+            else if (_timing.CurTime < _multipleDeathsTime + monitorComp.ProcessDelay)
+                _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
+
+            else
+                _multipleDeathsTime = null; //get rid of curtime for loop
 
             max++; //if there are more than 128 crew monitoring consoles just ignore it
         }
