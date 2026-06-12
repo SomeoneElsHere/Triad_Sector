@@ -132,7 +132,6 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             //if there are multiple deaths per time, log them all.
             else if (_timing.CurTime < _multipleDeathsTime + monitorComp.ProcessDelay)
                 _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
-
             else
                 _multipleDeathsTime = null; //get rid of curtime for loop
 
