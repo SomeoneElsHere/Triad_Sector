@@ -8,9 +8,6 @@ namespace Content.Server.Medical.CrewMonitoring;
 [Access(typeof(CrewMonitoringConsoleSystem))]
 public sealed partial class CrewMonitoringConsoleComponent : Component
 {
-    [DataField]
-    public List<string> varlist = new(); 
-
     /// <summary>
     ///     List of all currently connected sensors to this console.
     /// </summary>
