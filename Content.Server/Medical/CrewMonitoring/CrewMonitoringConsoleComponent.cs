@@ -20,37 +20,37 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     public float SensorTimeout = 10f;
 
     /// <summary>
-    ///     Used for the time for the next sound to play.
+    ///     Triad - Used for the time for the next sound to play.
     /// </summary>
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     public TimeSpan? NextSound = null;
 
     /// <summary>
-    ///     Used as the cooldown time for the next sound.
+    ///     Triad - Used as the cooldown time for the next sound.
     /// </summary>
     [DataField]
     public TimeSpan Cooldown = TimeSpan.FromSeconds(15);
 
     /// <summary>
-    ///     Used as the warning sound for the console.
+    ///    Triad - Used as the warning sound for the console.
     /// </summary>
     [DataField]
     public SoundSpecifier? WarningSound;
 
     /// <summary>
-    ///     Used as the delay for multiple people to be processed for the console.
+    ///    Triad - Used as the delay for multiple people to be processed for the console.
     /// </summary>
     [DataField]
     public TimeSpan ProcessDelay = TimeSpan.FromSeconds(1);
 
     /// <summary>
-    ///     Used as the damage threshold for the sound
+    ///    Triad - Used as the damage threshold for the sound
     /// </summary>
     [DataField]
     public int TriggerSndDamageThreshold = 100;
 
     /// <summary>
-    ///     Used as a saved version of the last time a sound was sent for multiple deaths.
+    ///     Triad - Used as a saved version of the last time a sound was sent for multiple deaths.
     /// </summary>
     [DataField]
     public TimeSpan? MultipleDeathsTime = null;
