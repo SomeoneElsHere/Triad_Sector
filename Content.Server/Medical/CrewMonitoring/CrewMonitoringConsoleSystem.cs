@@ -128,9 +128,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
                 _audio.PlayPvs(monitorComp.WarningSound, uid);
                 _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
             }
-
-            //if there are multiple deaths per time, log them all.
-            else if (_timing.CurTime < _multipleDeathsTime + monitorComp.ProcessDelay)
+            else if (_timing.CurTime < _multipleDeathsTime + monitorComp.ProcessDelay) //if there are multiple deaths per time, log them all.
                 _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
             else
                 _multipleDeathsTime = null; //get rid of curtime for loop
