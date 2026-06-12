@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Linq;
 using System.Xml;
 using Content.Server._NF.CryoSleep;
@@ -30,7 +31,6 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     [Dependency] private readonly ChatSystem _chat = default!;
 
     List<EntityCoordinates> _coords = new List<EntityCoordinates>();
-    private TimeSpan? _multipleDeathsTime = null;
     public override void Initialize()
     {
         base.Initialize();
@@ -121,17 +121,19 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
                 continue;
 
             //if next sound is new, play it like normal and set the next sound interval. If it is old, do the same.
-            if ((monitorComp.NextSound == null || _timing.CurTime >= monitorComp.NextSound) && _multipleDeathsTime == null)
+            if (monitorComp.NextSound == null || _timing.CurTime >= monitorComp.NextSound)
             {
-                _multipleDeathsTime = _timing.CurTime; //create new curtime
+                monitorComp.MultipleDeathsTime = _timing.CurTime; //create new curtime
                 monitorComp.NextSound = _timing.CurTime + monitorComp.Cooldown;
                 _audio.PlayPvs(monitorComp.WarningSound, uid);
                 _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
             }
-            else if (_timing.CurTime < _multipleDeathsTime + monitorComp.ProcessDelay) //if there are multiple deaths per time, log them all.
+
+            else if (monitorComp.MultipleDeathsTime != null && _timing.CurTime < monitorComp.MultipleDeathsTime + monitorComp.ProcessDelay) //if there are multiple deaths per time, log them all.
                 _chat.TrySendInGameICMessage(uid, message, Shared.Chat.InGameICChatType.Speak, hideChat: true);
+
             else
-                _multipleDeathsTime = null; //get rid of curtime for loop
+                monitorComp.MultipleDeathsTime = null; //get rid of curtime for loop
 
             max++; //if there are more than 128 crew monitoring consoles just ignore it
         }

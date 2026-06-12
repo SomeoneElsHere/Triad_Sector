@@ -18,7 +18,7 @@
   - type: CrewMonitoringConsole # Triad - added sound for high damage patients
     warningSound: 
       params:
-        maximumDistance: 15
+        maximumDistance: 5 # Triad - let this be small enough that you can only hear it with friends
         volume: -15
       path: /Audio/_Triad/Machines/medDanger.ogg
   - type: DeviceNetwork

@@ -8,6 +8,9 @@ namespace Content.Server.Medical.CrewMonitoring;
 [Access(typeof(CrewMonitoringConsoleSystem))]
 public sealed partial class CrewMonitoringConsoleComponent : Component
 {
+    [DataField]
+    public List<string> varlist = new(); 
+
     /// <summary>
     ///     List of all currently connected sensors to this console.
     /// </summary>
@@ -48,4 +51,10 @@ public sealed partial class CrewMonitoringConsoleComponent : Component
     /// </summary>
     [DataField]
     public int TriggerSndDamageThreshold = 100;
+
+    /// <summary>
+    ///     Used as a saved version of the last time a sound was sent for multiple deaths.
+    /// </summary>
+    [DataField]
+    public TimeSpan? MultipleDeathsTime = null;
 }
