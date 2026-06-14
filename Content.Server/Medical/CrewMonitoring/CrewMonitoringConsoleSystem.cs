@@ -1,6 +1,4 @@
-using System.Diagnostics;
 using System.Linq;
-using System.Xml;
 using Content.Server._NF.CryoSleep;
 using Content.Server.Chat.Systems;
 using Content.Server.Medical.SuitSensors;
@@ -25,19 +23,20 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
 {
     [Dependency] private readonly PowerCellSystem _cell = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!; // Triad
+    [Dependency] private readonly InventorySystem _inventory = default!; // Triad
+    [Dependency] private readonly IGameTiming _timing = default!; // Triad
+    [Dependency] private readonly ChatSystem _chat = default!; // Triad
 
-    List<EntityCoordinates> _coords = new List<EntityCoordinates>();
+    private readonly List<EntityCoordinates> _coords = new();
+
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<CrewMonitoringConsoleComponent, ComponentRemove>(OnRemove);
         SubscribeLocalEvent<CrewMonitoringConsoleComponent, DeviceNetworkPacketEvent>(OnPacketReceived);
         SubscribeLocalEvent<CrewMonitoringConsoleComponent, BoundUIOpenedEvent>(OnUIOpened);
-        SubscribeLocalEvent<MobStateComponent, DamageChangedEvent>(OnDamageChanged);
+        SubscribeLocalEvent<MobStateComponent, DamageChangedEvent>(OnDamageChanged); // Triad
     }
 
     private void OnRemove(EntityUid uid, CrewMonitoringConsoleComponent component, ComponentRemove args)
@@ -71,7 +70,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
         UpdateUserInterface(uid, component);
     }
     // Triad
-    //Over TriggerSndDamageThreshold damage? Play a sound to add to overall dread. (explained in PR)
+    //Over TriggerSndDamageThreshold damage? Play a sound to add to overall dread. (explained in PR #192)
     //Over 128 crew consoles? Start skipping everything to preservere resourses.
     //Dont play that sound if it is in a sound radius of another crew monitor to stop really loud sounds.
     //Dont play that sound if there is a cooldown to stop really loud sounds.
@@ -79,11 +78,13 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     //Send a IC message saying what crew got hurt so they can know.
 
     /// <summary>
-    /// Main loop where we do most of the work for processing each Crew Console entity UID to play a sound at that point.
+    /// Triad - Main loop where we do most of the work for processing each Crew Console entity UID to play a sound at that point.
     /// </summary>
     private void EnumarateCrewConsoles(EntityUid eu, DamageSpecifier damageDelta)
     {
-        int max = 0;
+        _coords.Clear();
+
+        var max = 0;
         var query = EntityQueryEnumerator<CrewMonitoringConsoleComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var monitorComp, out var xform))
         {
@@ -98,11 +99,12 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
 
             var transf = xform;
             var coord1 = transf.Coordinates;
-            bool skip = false;
+            var skip = false;
 
-            foreach (EntityCoordinates nongrid in _coords)
+            // If dist between 2 crew monitors is less than the sound radius, skip playing it since you can already hear it from the other comp.
+            foreach (var coordinate in _coords)
             {
-                if (coord1.TryDistance(EntityManager, nongrid, out float dist) && dist < monitorComp.WarningSound.Params.MaxDistance) //if dist between 2 crew monitors is less than the sound radius, skip playing it since you can already hear it from the other comp.
+                if (coord1.TryDistance(EntityManager, coordinate, out var dist) && dist < monitorComp.WarningSound.Params.MaxDistance)
                 {
                     skip = true;
                     break;
@@ -140,7 +142,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     }
 
     /// <summary>
-    /// Checks if a child of the damaged person has a suit with sensors on them, if so we skip them because it doesnt really make sense for it to go off when you have no sensors.
+    /// Triad - Checks if a child of the damaged person has a suit with sensors on them, if so we skip them because it doesnt really make sense for it to go off when you have no sensors.
     /// <summary>
     private bool FindSuit(InventorySystem.InventorySlotEnumerator enu)
     {
@@ -156,16 +158,16 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
     }
 
     /// <summary>
-    /// When an entity takes over TriggerSndDamageThreshold damage, play a sound to warn med if it meets the critera:
+    /// Triad - When an entity takes over TriggerSndDamageThreshold damage, play a sound to warn med if it meets the critera:
     /// Over 128 crew consoles? Start skipping everything to preservere resourses.
     /// Dont play that sound if it is in the sound radius of another crew monitor to stop really loud sounds.
     /// Dont play that sound if there is a cooldown to stop really loud sounds.
     /// No sounds if we dont have a sensor; how would the crew console get it IC?
     /// Also Send a IC message saying what crew got hurt so they can know.
     /// <summary>
-    private void OnDamageChanged(EntityUid eu, MobStateComponent mobState, DamageChangedEvent args) 
+    private void OnDamageChanged(EntityUid eu, MobStateComponent mobState, DamageChangedEvent args)
     {
-        if (!TryComp<PlayerJobComponent>(eu, out PlayerJobComponent? j)) //only player jobs count! Guard clause to skip non-crew.
+        if (!HasComp<PlayerJobComponent>(eu)) //only player jobs count! Guard clause to skip non-crew.
             return;
 
         if (args.DamageDelta == null) //if its null there is no damage.
@@ -179,7 +181,6 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
         {
             DamageSpecifier damageDelta = args.DamageDelta;
             EnumarateCrewConsoles(eu, damageDelta); //do main loop for most proccesing
-            _coords.Clear();
         }
     }
     //end Triad
