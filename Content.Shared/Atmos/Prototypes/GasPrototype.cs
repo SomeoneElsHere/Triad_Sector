@@ -83,5 +83,11 @@ namespace Content.Shared.Atmos.Prototypes
 
         [DataField("pricePerMole")]
         public float PricePerMole { get; set; } = 0;
+
+        /// <summary>
+        /// Triad - If or if not the gas has been generated.
+        /// </summary>
+        [DataField("isChemicalGas")]
+        public bool isChemicalGas{ get; set; } = false;
     }
 }
