@@ -48,7 +48,7 @@ for file in os.listdir(pth):
         name += dat[0].replace("-","_") + "\n"
         if not name.find("_"):
             continue
-        print(dat[0]+" = "+str(num)+",\n")
+        print(dat[0].replace("-","_")+" = "+str(num)+",\n")
         if buf.find("metallic"):
             specificHeat += "0.5" + "\n" #https://www.engineersedge.com/materials/specific_heat_capacity_of_metals_13259.html, Btu/lb-C is around that number ehhh
             heatCapacityRatio += "1.0"+ "\n" #https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Thermodynamics_and_Chemical_Equilibrium_(Ellgen)/07%3A_State_Functions_and_The_First_Law/7.14%3A_Heat_Capacities_of_Solids-_the_Law_of_Dulong_and_Petit cp/cv ~= 1
