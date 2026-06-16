@@ -1,0 +1,99 @@
+- type: gas
+  id: 13
+  name: "reagent_name_blood"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 800000
+  reagent: "Blood"
+
+- type: gas
+  id: 14
+  name: "reagent_name_insect_blood"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 808A51
+  reagent: "InsectBlood"
+
+- type: gas
+  id: 15
+  name: "reagent_name_slime"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 2cf274
+  reagent: "Slime"
+
+- type: gas
+  id: 16
+  name: "reagent_name_sap"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: cd7314
+  reagent: "Sap"
+
+- type: gas
+  id: 17
+  name: "reagent_name_hemocyanin_blood"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 162581
+  reagent: "CopperBlood"
+
+- type: gas
+  id: 18
+  name: "reagent_name_ammonia_blood"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 7a8bf2
+  reagent: "AmmoniaBlood"
+
+- type: gas
+  id: 19
+  name: "reagent_name_zombie_blood"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 2b0700
+  reagent: "ZombieBlood"
+
+- type: gas
+  id: 20
+  name: "reagent_name_ichor"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: f4692e
+  reagent: "Ichor"
+
+- type: gas
+  id: 21
+  name: "reagent_name_fat"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: d8d8b0
+  reagent: "Fat"
+
+- type: gas
+  id: 22
+  name: "reagent_name_vomit"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 87ab08
+  reagent: "Vomit"
+
+- type: gas
+  id: 23
+  name: "reagent_name_grey_matter"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: C584B8
+  reagent: "GreyMatter"
+

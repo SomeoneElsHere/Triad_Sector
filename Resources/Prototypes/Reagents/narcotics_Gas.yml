@@ -1,0 +1,117 @@
+- type: gas
+  id: -117
+  name: "reagent_name_desoxyephedrine"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: FAFAFA
+  reagent: "Desoxyephedrine"
+
+- type: gas
+  id: -116
+  name: "reagent_name_ephedrine"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: D2FFFA
+  reagent: "Ephedrine"
+
+- type: gas
+  id: -115
+  name: "reagent_name_stimulants"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 9A040E
+  reagent: "Stimulants"
+
+- type: gas
+  id: -114
+  name: "reagent_name_thc"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 808080
+  reagent: "THC"
+
+- type: gas
+  id: -113
+  name: "reagent_name_nicotine"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: C0C0C0
+  reagent: "Nicotine"
+
+- type: gas
+  id: -112
+  name: "reagent_name_impedrezene"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 215263
+  reagent: "Impedrezene"
+
+- type: gas
+  id: -111
+  name: "reagent_name_space_drugs"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 63806e
+  reagent: "SpaceDrugs"
+
+- type: gas
+  id: -110
+  name: "reagent_name_bananadine"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: ffff00
+  reagent: "Bananadine"
+
+- type: gas
+  id: -109
+  name: "reagent_name_nocturine"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 128e80
+  reagent: "Nocturine"
+
+- type: gas
+  id: -108
+  name: "reagent_name_mute_toxin"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 000000
+  reagent: "MuteToxin"
+
+- type: gas
+  id: -107
+  name: "reagent_name_norepinephric_acid"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 96a8b5
+  reagent: "NorepinephricAcid"
+
+- type: gas
+  id: -106
+  name: "reagent_name_tear_gas"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 96a8b5
+  reagent: "TearGas"
+
+- type: gas
+  id: -105
+  name: "reagent_name_happiness"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: EE35FF
+  reagent: "Happiness"
+

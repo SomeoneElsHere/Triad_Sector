@@ -1,0 +1,63 @@
+- type: gas
+  id: 82
+  name: "reagent_name_oxygen"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: c4f5ff
+  reagent: "Oxygen"
+
+- type: gas
+  id: 83
+  name: "reagent_name_plasma"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 7e009e
+  reagent: "Plasma"
+
+- type: gas
+  id: 84
+  name: "reagent_name_tritium"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 66ff33
+  reagent: "Tritium"
+
+- type: gas
+  id: 85
+  name: "reagent_name_carbon_dioxide"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 66ff33
+  reagent: "CarbonDioxide"
+
+- type: gas
+  id: 86
+  name: "reagent_name_nitrogen"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: a1e1ff
+  reagent: "Nitrogen"
+
+- type: gas
+  id: 87
+  name: "reagent_name_nitrous_oxide"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 5d88c9
+  reagent: "NitrousOxide"
+
+- type: gas
+  id: 88
+  name: "reagent_name_frezon"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 3a758c
+  reagent: "Frezon"
+

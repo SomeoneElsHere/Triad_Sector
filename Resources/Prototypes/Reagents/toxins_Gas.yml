@@ -1,0 +1,252 @@
+- type: gas
+  id: -96
+  name: "reagent_name_toxin"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: cf3600
+  reagent: "Toxin"
+
+- type: gas
+  id: -95
+  name: "reagent_name_carpotoxin"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: e2a38c
+  reagent: "CarpoToxin"
+
+- type: gas
+  id: -94
+  name: "reagent_name_chloral_hydrate"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 000067
+  reagent: "ChloralHydrate"
+
+- type: gas
+  id: -93
+  name: "reagent_name_gastrotoxin"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: acc91a
+  reagent: "GastroToxin"
+
+- type: gas
+  id: -92
+  name: "reagent_name_mold"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 8a9a5b
+  reagent: "Mold"
+
+- type: gas
+  id: -91
+  name: "reagent_name_polytrinic_acid"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: a1000b
+  reagent: "PolytrinicAcid"
+
+- type: gas
+  id: -90
+  name: "reagent_name_ferrochromic_acid"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 48b3b8
+  reagent: "FerrochromicAcid"
+
+- type: gas
+  id: -89
+  name: "reagent_name_fluorosulfuric_acid"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 5050ff
+  reagent: "FluorosulfuricAcid"
+
+- type: gas
+  id: -88
+  name: "reagent_name_sulfuric_acid"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: BF8C00
+  reagent: "SulfuricAcid"
+
+- type: gas
+  id: -87
+  name: "reagent_name_unstable_mutagen"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 00ff5f
+  reagent: "UnstableMutagen"
+
+- type: gas
+  id: -86
+  name: "reagent_name_heartbreaker_toxin"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 5f959c
+  reagent: "HeartbreakerToxin"
+
+- type: gas
+  id: -85
+  name: "reagent_name_lexorin"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 6b0007
+  reagent: "Lexorin"
+
+- type: gas
+  id: -84
+  name: "reagent_name_mindbreaker_toxin"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 77b58e
+  reagent: "MindbreakerToxin"
+
+- type: gas
+  id: -83
+  name: "reagent_name_histamine"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: FA6464
+  reagent: "Histamine"
+
+- type: gas
+  id: -82
+  name: "reagent_name_theobromine"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: f5f5f5
+  reagent: "Theobromine"
+
+- type: gas
+  id: -81
+  name: "reagent_name_amatoxin"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: D6CE7B
+  reagent: "Amatoxin"
+
+- type: gas
+  id: -80
+  name: "reagent_name_vent_crud"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 000000
+  reagent: "VentCrud"
+
+- type: gas
+  id: -79
+  name: "reagent_name_romerol"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 7e916e
+  reagent: "Romerol"
+
+- type: gas
+  id: -78
+  name: "reagent_name_uncooked_animal_proteins"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: FFFFE5
+  reagent: "UncookedAnimalProteins"
+
+- type: gas
+  id: -77
+  name: "reagent_name_allicin"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: F2E9D2
+  reagent: "Allicin"
+
+- type: gas
+  id: -76
+  name: "reagent_name_pax"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: AAAAAA
+  reagent: "Pax"
+
+- type: gas
+  id: -75
+  name: "reagent_name_honk"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: F2E9D2
+  reagent: "Honk"
+
+- type: gas
+  id: -74
+  name: "reagent_name_lead"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 5C6274
+  reagent: "Lead"
+
+- type: gas
+  id: -73
+  name: "reagent_name_bungotoxin"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: EBFF8E
+  reagent: "Bungotoxin"
+
+- type: gas
+  id: -72
+  name: "reagent_name_vestine"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 435166
+  reagent: "Vestine"
+
+- type: gas
+  id: -71
+  name: "reagent_name_tazinide"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: FDD023
+  reagent: "Tazinide"
+
+- type: gas
+  id: -70
+  name: "reagent_name_lipolicide"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: F0FFF0
+  reagent: "Lipolicide"
+
+- type: gas
+  id: -69
+  name: "reagent_name_mechanotoxin"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 00b408
+  reagent: "Mechanotoxin"
+

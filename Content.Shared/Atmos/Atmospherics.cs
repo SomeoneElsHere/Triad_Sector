@@ -228,7 +228,7 @@ namespace Content.Shared.Atmos
         /// <summary>
         ///     Total number of gases. Increase this if you want to add more!
         /// </summary>
-        public const int TotalNumberOfGases = 13; //Funky/Goob: 9 >> 13
+        public const int TotalNumberOfGases = 185; //Funky/Goob: 9 >> 13
 
         /// <summary>
         ///     This is the actual length of the gases arrays in mixtures.
@@ -430,5 +430,349 @@ namespace Content.Shared.Atmos
         Healium = 10, //Funky/Goob
         Nitrium = 11, //Funky/Goob
 		Pluoxium = 12, //Funky/Goob
+       reagent_name_blood = 13,
+
+reagent_name_insect_blood = 14,
+
+reagent_name_slime = 15,
+
+reagent_name_sap = 16,
+
+reagent_name_hemocyanin_blood = 17,
+
+reagent_name_ammonia_blood = 18,
+
+reagent_name_zombie_blood = 19,
+
+reagent_name_ichor = 20,
+
+reagent_name_fat = 21,
+
+reagent_name_vomit = 22,
+
+reagent_name_grey_matter = 23,
+
+reagent_name_e_z_nutrient = 24,
+
+reagent_name_left4_zed = 25,
+
+reagent_name_pest_killer = 26,
+
+reagent_name_plant_b_gone = 27,
+
+reagent_name_robust_harvest = 28,
+
+reagent_name_sedin = 29,
+
+reagent_name_weed_killer = 30,
+
+reagent_name_ammonia = 31,
+
+reagent_name_diethylamine = 32,
+
+reagent_name_acetone = 33,
+
+reagent_name_phenol = 34,
+
+reagent_name_charcoal = 35,
+
+reagent_name_ash = 36,
+
+reagent_name_sodium_carbonate = 37,
+
+reagent_name_artifexium = 38,
+
+reagent_name_benzene = 39,
+
+reagent_name_hydroxide = 40,
+
+reagent_name_sodium_hydroxide = 41,
+
+reagent_name_fersilicite = 42,
+
+reagent_name_sodium_polyacrylate = 43,
+
+reagent_name_cellulose = 44,
+
+reagent_name_rororium = 45,
+
+reagent_name_bleach = 46,
+
+reagent_name_space_cleaner = 47,
+
+reagent_name_soap = 48,
+
+reagent_name_space_lube = 49,
+
+reagent_name_space_glue = 50,
+
+reagent_name_aluminium = 51,
+
+reagent_name_carbon = 52,
+
+reagent_name_chlorine = 53,
+
+reagent_name_copper = 54,
+
+reagent_name_fluorine = 55,
+
+reagent_name_gold = 56,
+
+reagent_name_hydrogen = 57,
+
+reagent_name_iodine = 58,
+
+reagent_name_iron = 59,
+
+reagent_name_lithium = 60,
+
+reagent_name_mercury = 61,
+
+reagent_name_potassium = 62,
+
+reagent_name_phosphorus = 63,
+
+reagent_name_radium = 64,
+
+reagent_name_silicon = 65,
+
+reagent_name_silver = 66,
+
+reagent_name_sulfur = 67,
+
+reagent_name_sodium = 68,
+
+reagent_name_uranium = 69,
+
+reagent_name_zinc = 70,
+
+reagent_name_carpetium = 71,
+
+reagent_name_fiber = 72,
+
+reagent_name_buzzochloric_bees = 73,
+
+reagent_name_ground_bee = 74,
+
+reagent_name_saxoite = 75,
+
+reagent_name_licoxide = 76,
+
+reagent_name_razorium = 77,
+
+reagent_name_fresium = 78,
+
+reagent_name_laughter = 79,
+
+reagent_name_weh = 80,
+
+reagent_name_hew = 81,
+
+reagent_name_oxygen = 82,
+
+reagent_name_plasma = 83,
+
+reagent_name_tritium = 84,
+
+reagent_name_carbon_dioxide = 85,
+
+reagent_name_nitrogen = 86,
+
+reagent_name_nitrous_oxide = 87,
+
+reagent_name_frezon = 88,
+
+reagent_name_cryptobiolin = 89,
+
+reagent_name_dylovene = 90,
+
+reagent_name_diphenhydramine = 91,
+
+reagent_name_ethylredoxrazine = 92,
+
+reagent_name_arithrazine = 93,
+
+reagent_name_bicaridine = 94,
+
+reagent_name_cryoxadone = 95,
+
+reagent_name_doxarubixadone = 96,
+
+reagent_name_dermaline = 97,
+
+reagent_name_dexalin = 98,
+
+reagent_name_dexalin_plus = 99,
+
+reagent_name_epinephrine = 100,
+
+reagent_name_hyronalin = 101,
+
+reagent_name_ipecac = 102,
+
+reagent_name_inaprovaline = 103,
+
+reagent_name_kelotane = 104,
+
+reagent_name_leporazine = 105,
+
+reagent_name_barozine = 106,
+
+reagent_name_phalanximine = 107,
+
+reagent_name_polypyrylium_oligomers = 108,
+
+reagent_name_ambuzol = 109,
+
+reagent_name_ambuzol_plus = 110,
+
+reagent_name_pulped_banana_peel = 111,
+
+reagent_name_saline = 112,
+
+reagent_name_siderlac = 113,
+
+reagent_name_stellibinin = 114,
+
+reagent_name_synaptizine = 115,
+
+reagent_name_tranexamic_acid = 116,
+
+reagent_name_tricordrazine = 117,
+
+reagent_name_lipozine = 118,
+
+reagent_name_omnizine = 119,
+
+reagent_name_ultravasculine = 120,
+
+reagent_name_oculine = 121,
+
+reagent_name_cognizine = 122,
+
+reagent_name_ethyloxyephedrine = 123,
+
+reagent_name_diphenylmethylamine = 124,
+
+reagent_name_sigynate = 125,
+
+reagent_name_lacerinol = 126,
+
+reagent_name_puncturase = 127,
+
+reagent_name_bruizine = -128,
+
+reagent_name_holywater = -127,
+
+reagent_name_pyrazine = -126,
+
+reagent_name_insuzine = -125,
+
+reagent_name_opporozidone = -124,
+
+reagent_name_necrosol = -123,
+reagent_name_psicodine = -120,
+
+reagent_name_potassium_iodide = -119,
+
+reagent_name_haloperidol = -118,
+
+reagent_name_desoxyephedrine = -117,
+
+reagent_name_ephedrine = -116,
+
+reagent_name_stimulants = -115,
+
+reagent_name_thc = -114,
+
+reagent_name_nicotine = -113,
+
+reagent_name_impedrezene = -112,
+
+reagent_name_space_drugs = -111,
+
+reagent_name_bananadine = -110,
+
+reagent_name_nocturine = -109,
+
+reagent_name_mute_toxin = -108,
+
+reagent_name_norepinephric_acid = -107,
+
+reagent_name_tear_gas = -106,
+
+reagent_name_happiness = -105,
+
+reagent_name_thermite = -103,
+
+reagent_name_napalm = -102,
+
+reagent_name_phlogiston = -101,
+
+reagent_name_chlorine_trifluoride = -100,
+
+reagent_name_foaming_agent = -99,
+
+reagent_name_welding_fuel = -98,
+
+reagent_name_fluorosurfactant = -97,
+
+reagent_name_toxin = -96,
+
+reagent_name_carpotoxin = -95,
+
+reagent_name_chloral_hydrate = -94,
+
+reagent_name_gastrotoxin = -93,
+
+reagent_name_mold = -92,
+
+reagent_name_polytrinic_acid = -91,
+
+reagent_name_ferrochromic_acid = -90,
+
+reagent_name_fluorosulfuric_acid = -89,
+
+reagent_name_sulfuric_acid = -88,
+
+reagent_name_unstable_mutagen = -87,
+
+reagent_name_heartbreaker_toxin = -86,
+
+reagent_name_lexorin = -85,
+
+reagent_name_mindbreaker_toxin = -84,
+
+reagent_name_histamine = -83,
+
+reagent_name_theobromine = -82,
+
+reagent_name_amatoxin = -81,
+
+reagent_name_vent_crud = -80,
+
+reagent_name_romerol = -79,
+
+reagent_name_uncooked_animal_proteins = -78,
+
+reagent_name_allicin = -77,
+
+reagent_name_pax = -76,
+
+reagent_name_honk = -75,
+
+reagent_name_lead = -74,
+
+reagent_name_bungotoxin = -73,
+
+reagent_name_vestine = -72,
+
+reagent_name_tazinide = -71,
+
+reagent_name_lipolicide = -70,
+
+reagent_name_mechanotoxin = -69,
     }
 }
+
+

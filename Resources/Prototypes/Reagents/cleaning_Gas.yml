@@ -1,0 +1,45 @@
+- type: gas
+  id: 46
+  name: "reagent_name_bleach"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: a1000b
+  reagent: "Bleach"
+
+- type: gas
+  id: 47
+  name: "reagent_name_space_cleaner"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: c8ff69
+  reagent: "SpaceCleaner"
+
+- type: gas
+  id: 48
+  name: "reagent_name_soap"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: c8dfc9
+  reagent: "SoapReagent"
+
+- type: gas
+  id: 49
+  name: "reagent_name_space_lube"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 77b58e
+  reagent: "SpaceLube"
+
+- type: gas
+  id: 50
+  name: "reagent_name_space_glue"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: ffffff
+  reagent: "SpaceGlue"
+

@@ -1,0 +1,180 @@
+- type: gas
+  id: 51
+  name: "reagent_name_aluminium # _we use real words here."
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 848789
+  reagent: "Aluminium # We use real words here."
+
+- type: gas
+  id: 52
+  name: "reagent_name_carbon"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 22282b
+  reagent: "Carbon"
+
+- type: gas
+  id: 53
+  name: "reagent_name_chlorine"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: a2ff00
+  reagent: "Chlorine"
+
+- type: gas
+  id: 54
+  name: "reagent_name_copper"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: b05b3c
+  reagent: "Copper"
+
+- type: gas
+  id: 55
+  name: "reagent_name_fluorine"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: ba85cc
+  reagent: "Fluorine"
+
+- type: gas
+  id: 56
+  name: "reagent_name_gold"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: F7C430
+  reagent: "Gold"
+
+- type: gas
+  id: 57
+  name: "reagent_name_hydrogen"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: cccccc
+  reagent: "Hydrogen"
+
+- type: gas
+  id: 58
+  name: "reagent_name_iodine"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: BC8A00
+  reagent: "Iodine"
+
+- type: gas
+  id: 59
+  name: "reagent_name_iron"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 434b4d
+  reagent: "Iron"
+
+- type: gas
+  id: 60
+  name: "reagent_name_lithium"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: d6c0a7
+  reagent: "Lithium"
+
+- type: gas
+  id: 61
+  name: "reagent_name_mercury"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 929296
+  reagent: "Mercury"
+
+- type: gas
+  id: 62
+  name: "reagent_name_potassium"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: c6c8cc
+  reagent: "Potassium"
+
+- type: gas
+  id: 63
+  name: "reagent_name_phosphorus"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: f5da9a
+  reagent: "Phosphorus"
+
+- type: gas
+  id: 64
+  name: "reagent_name_radium"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 00ff04
+  reagent: "Radium"
+
+- type: gas
+  id: 65
+  name: "reagent_name_silicon"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 364266
+  reagent: "Silicon"
+
+- type: gas
+  id: 66
+  name: "reagent_name_silver"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: d0d0d0
+  reagent: "Silver"
+
+- type: gas
+  id: 67
+  name: "reagent_name_sulfur"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: fff385
+  reagent: "Sulfur"
+
+- type: gas
+  id: 68
+  name: "reagent_name_sodium"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: a7b3d6
+  reagent: "Sodium"
+
+- type: gas
+  id: 69
+  name: "reagent_name_uranium"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 8fa191
+  reagent: "Uranium"
+
+- type: gas
+  id: 70
+  name: "reagent_name_zinc"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: bababa
+  reagent: "Zinc"
+

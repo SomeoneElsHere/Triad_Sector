@@ -25,7 +25,12 @@ namespace Content.Shared.Atmos.EntitySystems
 
             for (var i = 0; i < Atmospherics.TotalNumberOfGases; i++)
             {
-                GasPrototypes[i] = _prototypeManager.Index<GasPrototype>(i.ToString());
+                int p = i;
+                if (p > 127)
+                {
+                    p = p-128;
+                }
+                GasPrototypes[i] = _prototypeManager.Index<GasPrototype>(p.ToString());
             }
         }
 

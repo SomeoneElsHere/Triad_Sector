@@ -1,0 +1,81 @@
+- type: gas
+  id: 24
+  name: "reagent_name_e_z_nutrient"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 664330
+  reagent: "EZNutrient"
+
+- type: gas
+  id: 25
+  name: "reagent_name_left4_zed"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 5b406c
+  reagent: "Left4Zed"
+
+- type: gas
+  id: 26
+  name: "reagent_name_pest_killer"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 9e9886
+  reagent: "PestKiller"
+
+- type: gas
+  id: 27
+  name: "reagent_name_plant_b_gone"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 49002E
+  reagent: "PlantBGone"
+
+- type: gas
+  id: 28
+  name: "reagent_name_robust_harvest"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 3e901c
+  reagent: "RobustHarvest"
+
+- type: gas
+  id: 29
+  name: "reagent_name_sedin"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 3CB371
+  reagent: "Sedin"
+
+- type: gas
+  id: 30
+  name: "reagent_name_weed_killer"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 968395
+  reagent: "WeedKiller"
+
+- type: gas
+  id: 31
+  name: "reagent_name_ammonia"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 77b58e
+  reagent: "Ammonia"
+
+- type: gas
+  id: 32
+  name: "reagent_name_diethylamine"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: a1000b
+  reagent: "Diethylamine"
+

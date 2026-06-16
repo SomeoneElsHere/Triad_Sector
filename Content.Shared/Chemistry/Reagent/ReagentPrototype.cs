@@ -23,6 +23,7 @@ namespace Content.Shared.Chemistry.Reagent
 {
     [Prototype]
     [DataDefinition]
+    [Serializable, NetSerializable]
     public sealed partial class ReagentPrototype : IPrototype, IInheritingPrototype
     {
         [ViewVariables]
@@ -285,6 +286,7 @@ namespace Content.Shared.Chemistry.Reagent
     }
 
     [DataDefinition]
+    [Serializable, NetSerializable]
     public sealed partial class ReactiveReagentEffectEntry
     {
         [DataField("methods", required: true)]

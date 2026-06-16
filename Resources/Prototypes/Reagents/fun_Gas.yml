@@ -1,0 +1,99 @@
+- type: gas
+  id: 71
+  name: "reagent_name_carpetium"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 800000
+  reagent: "Carpetium"
+
+- type: gas
+  id: 72
+  name: "reagent_name_fiber"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 808080
+  reagent: "Fiber"
+
+- type: gas
+  id: 73
+  name: "reagent_name_buzzochloric_bees"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: FFD35D
+  reagent: "BuzzochloricBees"
+
+- type: gas
+  id: 74
+  name: "reagent_name_ground_bee"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 86530E
+  reagent: "GroundBee"
+
+- type: gas
+  id: 75
+  name: "reagent_name_saxoite"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: B8A603
+  reagent: "Saxoite"
+
+- type: gas
+  id: 76
+  name: "reagent_name_licoxide"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: FDD023
+  reagent: "Licoxide"
+
+- type: gas
+  id: 77
+  name: "reagent_name_razorium"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: e3fffb
+  reagent: "Razorium"
+
+- type: gas
+  id: 78
+  name: "reagent_name_fresium"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: b3f1ff
+  reagent: "Fresium"
+
+- type: gas
+  id: 79
+  name: "reagent_name_laughter"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: FF4DD2
+  reagent: "Laughter"
+
+- type: gas
+  id: 80
+  name: "reagent_name_weh"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 59b23a
+  reagent: "JuiceThatMakesYouWeh"
+
+- type: gas
+  id: 81
+  name: "reagent_name_hew"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: a64dc5
+  reagent: "JuiceThatMakesYouHew"
+

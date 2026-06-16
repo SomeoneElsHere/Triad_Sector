@@ -41,11 +41,11 @@ for file in os.listdir(pth):
 
         buf = buf.partition("id: ")[2]
         dat = buf.partition("\n")
-        reagent += dat[0] + "\n\n"
+        reagent += "\""+dat[0]+"\"" + "\n\n"
         
         buf = buf.partition("name: ")[2]
         dat = buf.partition("\n")
-        name += dat[0].replace("-","_") + "\n"
+        name += "\""+dat[0].replace("-","_")+"\"" + "\n"
         if not name.find("_"):
             continue
         print(dat[0].replace("-","_")+" = "+str(num)+",\n")

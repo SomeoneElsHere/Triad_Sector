@@ -1,0 +1,63 @@
+- type: gas
+  id: -103
+  name: "reagent_name_thermite"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 757245
+  reagent: "Thermite"
+
+- type: gas
+  id: -102
+  name: "reagent_name_napalm"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: FA00AF
+  reagent: "Napalm"
+
+- type: gas
+  id: -101
+  name: "reagent_name_phlogiston"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: D4872A
+  reagent: "Phlogiston"
+
+- type: gas
+  id: -100
+  name: "reagent_name_chlorine_trifluoride"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: FFC8C8
+  reagent: "ChlorineTrifluoride"
+
+- type: gas
+  id: -99
+  name: "reagent_name_foaming_agent"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 215263
+  reagent: "FoamingAgent"
+
+- type: gas
+  id: -98
+  name: "reagent_name_welding_fuel"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: a76b1c
+  reagent: "WeldingFuel"
+
+- type: gas
+  id: -97
+  name: "reagent_name_fluorosurfactant"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 9e6b38
+  reagent: "Fluorosurfactant"
+
