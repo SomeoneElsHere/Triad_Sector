@@ -1,8 +1,4 @@
 using Content.Server._NF.Auth;
-// Triad: tamper protection
-using Content.Server._Triad.Shipyard.Admin;
-using Content.Server._Triad.Shipyard.Persistence;
-// End Triad
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -89,15 +85,6 @@ namespace Content.Server.IoC
             IoCManager.Register<DiscordLink>();
             IoCManager.Register<DiscordChatLink>();
             IoCManager.Register<ServerIdentityService>();
-
-            // Triad: tamper protection
-            IoCManager.Register<ITriadShipyardKeyStore,    TriadShipyardKeyStore>();
-            IoCManager.Register<ITriadShipyardAuditLog,    TriadShipyardAuditLogStore>();
-            IoCManager.Register<ITriadShipyardPermitStore, TriadShipyardPermitStore>();
-            // Tracks open tamper admin panels so a single audit-write signal updates every one,
-            // letting multiple admins watch the live feed without re-opening it.
-            IoCManager.Register<TriadTamperAdminEuiRegistry>();
-            // End Triad
         }
     }
 }

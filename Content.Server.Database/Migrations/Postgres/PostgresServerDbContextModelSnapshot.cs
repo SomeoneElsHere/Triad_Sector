@@ -1486,6 +1486,7 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("trait", (string)null);
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("Content.Server.Database.TriadShipyardAuditEvent", b =>
                 {
                     b.Property<long>("Id")
@@ -1676,6 +1677,8 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("unban", (string)null);
                 });
 
+=======
+>>>>>>> parent of b3d2c80af8 (ShipSaving Tamper Protection: It's over 9000 Edition. (#172))
             modelBuilder.Entity("Content.Server.Database.UploadedResourceLog", b =>
                 {
                     b.Property<int>("Id")
