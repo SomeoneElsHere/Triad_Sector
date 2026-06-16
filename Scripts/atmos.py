@@ -46,6 +46,8 @@ for file in os.listdir(pth):
         buf = buf.partition("name: ")[2]
         dat = buf.partition("\n")
         name += dat[0].replace("-","_") + "\n"
+        if not name.find("_"):
+            continue
         print(dat[0]+" = "+str(num)+",\n")
         if buf.find("metallic"):
             specificHeat += "0.5" + "\n" #https://www.engineersedge.com/materials/specific_heat_capacity_of_metals_13259.html, Btu/lb-C is around that number ehhh
