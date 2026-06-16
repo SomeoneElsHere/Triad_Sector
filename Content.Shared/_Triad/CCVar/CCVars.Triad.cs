@@ -22,7 +22,7 @@ public sealed class TriadCCVars
     /// fail the signature/trust checks. Unrecognised values fall back to "notify".
     /// </summary>
     public static readonly CVarDef<string> TamperMode =
-        CVarDef.Create("triad.tamper_mode", "notify", CVar.SERVERONLY);
+        CVarDef.Create("triad.tamper_mode", "off", CVar.SERVERONLY);
 
     /// <summary>
     /// Default page size for the admin audit-log viewer. Hard-capped server-side at 500.
