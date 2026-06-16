@@ -59,7 +59,7 @@ for file in os.listdir(pth):
         dat = buf.partition("\n")
         color += dat[0].replace("\"","").replace("#","") + "\n" #remove extra
 
-        f.write(id+name+specificHeat+heatCapacityRatio+molarMass+color+reagent) #write it all!
+        f.write("- type: gas\n"+"  "+id+"  "+name+"  "+specificHeat+"  "+heatCapacityRatio+"  "+molarMass+"  "+color+"  "+reagent) #write it all!
         num = num +1
         f.flush()
     f.close()
