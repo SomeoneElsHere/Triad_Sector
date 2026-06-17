@@ -13,7 +13,6 @@ public sealed class TriadCCVars
     ///     How much the ship cost will be. 0.3f = 30% of full appraisal
     /// </summary>
     public static readonly CVarDef<float> LoadShipPrice =
-<<<<<<< HEAD
         CVarDef.Create("triad.load_ship_price", 0.3f, CVar.SERVER | CVar.REPLICATED);
 
     // Triad: tamper protection
@@ -42,7 +41,4 @@ public sealed class TriadCCVars
         CVarDef.Create("triad.tamper_signing_keys_dir", "./triad-signing-keys", CVar.SERVERONLY);
 
     // End Triad
-=======
-        CVarDef.Create("triad.load_ship_price", 0.3f, CVar.SERVERONLY);
->>>>>>> parent of b3d2c80af8 (ShipSaving Tamper Protection: It's over 9000 Edition. (#172))
 }
