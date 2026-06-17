@@ -6,6 +6,8 @@
   molarMass: 1
   color: cf3600
   reagent: "Toxin"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -95
@@ -15,6 +17,8 @@
   molarMass: 1
   color: e2a38c
   reagent: "CarpoToxin"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -94
@@ -24,6 +28,8 @@
   molarMass: 1
   color: 000067
   reagent: "ChloralHydrate"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -93
@@ -33,6 +39,8 @@
   molarMass: 1
   color: acc91a
   reagent: "GastroToxin"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -92
@@ -42,6 +50,8 @@
   molarMass: 1
   color: 8a9a5b
   reagent: "Mold"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -91
@@ -51,6 +61,8 @@
   molarMass: 1
   color: a1000b
   reagent: "PolytrinicAcid"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -90
@@ -60,6 +72,8 @@
   molarMass: 1
   color: 48b3b8
   reagent: "FerrochromicAcid"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -89
@@ -69,6 +83,8 @@
   molarMass: 1
   color: 5050ff
   reagent: "FluorosulfuricAcid"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -88
@@ -78,6 +94,8 @@
   molarMass: 1
   color: BF8C00
   reagent: "SulfuricAcid"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -87
@@ -87,6 +105,8 @@
   molarMass: 1
   color: 00ff5f
   reagent: "UnstableMutagen"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -86
@@ -96,6 +116,8 @@
   molarMass: 1
   color: 5f959c
   reagent: "HeartbreakerToxin"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -85
@@ -105,6 +127,8 @@
   molarMass: 1
   color: 6b0007
   reagent: "Lexorin"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -84
@@ -114,6 +138,8 @@
   molarMass: 1
   color: 77b58e
   reagent: "MindbreakerToxin"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -83
@@ -123,6 +149,8 @@
   molarMass: 1
   color: FA6464
   reagent: "Histamine"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -82
@@ -132,6 +160,8 @@
   molarMass: 1
   color: f5f5f5
   reagent: "Theobromine"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -81
@@ -141,6 +171,8 @@
   molarMass: 1
   color: D6CE7B
   reagent: "Amatoxin"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -80
@@ -150,6 +182,8 @@
   molarMass: 1
   color: 000000
   reagent: "VentCrud"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -79
@@ -159,6 +193,8 @@
   molarMass: 1
   color: 7e916e
   reagent: "Romerol"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -78
@@ -168,6 +204,8 @@
   molarMass: 1
   color: FFFFE5
   reagent: "UncookedAnimalProteins"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -77
@@ -177,6 +215,8 @@
   molarMass: 1
   color: F2E9D2
   reagent: "Allicin"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -76
@@ -186,6 +226,8 @@
   molarMass: 1
   color: AAAAAA
   reagent: "Pax"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -75
@@ -195,6 +237,8 @@
   molarMass: 1
   color: F2E9D2
   reagent: "Honk"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -74
@@ -204,6 +248,8 @@
   molarMass: 1
   color: 5C6274
   reagent: "Lead"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -73
@@ -213,6 +259,8 @@
   molarMass: 1
   color: EBFF8E
   reagent: "Bungotoxin"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -72
@@ -222,6 +270,8 @@
   molarMass: 1
   color: 435166
   reagent: "Vestine"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -71
@@ -231,6 +281,8 @@
   molarMass: 1
   color: FDD023
   reagent: "Tazinide"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -70
@@ -240,6 +292,8 @@
   molarMass: 1
   color: F0FFF0
   reagent: "Lipolicide"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -69
@@ -249,4 +303,6 @@
   molarMass: 1
   color: 00b408
   reagent: "Mechanotoxin"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 

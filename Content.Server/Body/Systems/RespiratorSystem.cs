@@ -21,6 +21,8 @@ using Content.Shared.Mobs.Systems;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
+using Content.Shared.FixedPoint;
 
 namespace Content.Server.Body.Systems;
 
@@ -34,6 +36,9 @@ public sealed class RespiratorSystem : EntitySystem
     [Dependency] private readonly BodySystem _bodySystem = default!;
     [Dependency] private readonly DamageableSystem _damageableSys = default!;
     [Dependency] private readonly LungSystem _lungSystem = default!;
+    [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
+    [Dependency] private readonly StomachSystem _stomachSystem = default!;
+    
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
@@ -139,7 +144,25 @@ public sealed class RespiratorSystem : EntitySystem
             // Merge doesn't remove gas from the giver.
             _atmosSys.Merge(lung.Air, gas);
             _lungSystem.GasToReagent(organUid, lung);
+            if (lung.Solution == null)
+                continue;
+            Solution sol = lung.Solution.Value.Comp.Solution;
+            
+            //get those extra gases in your system!!!
+            var s =  new Solution();
+            foreach(ReagentQuantity r in sol.Contents)
+            {
+                if (r.Reagent.Prototype == "Oxygen" || r.Reagent.Prototype == "Nitrogen" || r.Reagent.Prototype == "CarbonDioxide")
+                    continue;
+                s.AddReagent(r);
+                //those gases are gone
+                _solutionContainerSystem.RemoveReagent((Entity<SolutionComponent>)lung.Solution,r);
+            }
+            var steam = EntityManager.GetComponent<BloodstreamComponent>(uid);
+            Console.WriteLine(_bloodstreamSystem.TryAddToChemicals(uid, s, steam));
+            
         }
+        
     }
 
     public void Exhale(EntityUid uid, BodyComponent? body = null)

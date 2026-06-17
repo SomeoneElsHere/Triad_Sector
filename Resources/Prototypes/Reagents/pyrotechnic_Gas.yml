@@ -1,4 +1,15 @@
 - type: gas
+  id: -104
+  name: "reagent_name_thermite_1"
+  specificHeat: 0.5
+  heatCapacityRatio: 1.0
+  molarMass: 1
+  color: 757245
+  reagent: "Thermite"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
+
+- type: gas
   id: -103
   name: "reagent_name_thermite"
   specificHeat: 0.5
@@ -6,6 +17,8 @@
   molarMass: 1
   color: 757245
   reagent: "Thermite"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -102
@@ -15,6 +28,8 @@
   molarMass: 1
   color: FA00AF
   reagent: "Napalm"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -101
@@ -24,6 +39,8 @@
   molarMass: 1
   color: D4872A
   reagent: "Phlogiston"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -100
@@ -33,6 +50,8 @@
   molarMass: 1
   color: FFC8C8
   reagent: "ChlorineTrifluoride"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -99
@@ -42,6 +61,8 @@
   molarMass: 1
   color: 215263
   reagent: "FoamingAgent"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -98
@@ -51,6 +72,8 @@
   molarMass: 1
   color: a76b1c
   reagent: "WeldingFuel"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -97
@@ -60,4 +83,6 @@
   molarMass: 1
   color: 9e6b38
   reagent: "Fluorosurfactant"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 

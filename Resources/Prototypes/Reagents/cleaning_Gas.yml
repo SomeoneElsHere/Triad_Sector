@@ -6,6 +6,8 @@
   molarMass: 1
   color: a1000b
   reagent: "Bleach"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 47
@@ -15,6 +17,8 @@
   molarMass: 1
   color: c8ff69
   reagent: "SpaceCleaner"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 48
@@ -24,6 +28,8 @@
   molarMass: 1
   color: c8dfc9
   reagent: "SoapReagent"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 49
@@ -33,6 +39,8 @@
   molarMass: 1
   color: 77b58e
   reagent: "SpaceLube"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 50
@@ -42,4 +50,6 @@
   molarMass: 1
   color: ffffff
   reagent: "SpaceGlue"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 

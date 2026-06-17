@@ -37,11 +37,12 @@ for file in os.listdir(pth):
         molarMass = "molarMass: 1\n"
         color = "color: "
         reagent = "reagent: "
-        
+        sprite= "gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi\n"
+        state = "gasOverlayState: plasma\n\n"
 
         buf = buf.partition("id: ")[2]
         dat = buf.partition("\n")
-        reagent += "\""+dat[0]+"\"" + "\n\n"
+        reagent += "\""+dat[0]+"\"" + "\n"
         
         buf = buf.partition("name: ")[2]
         dat = buf.partition("\n")
@@ -61,7 +62,7 @@ for file in os.listdir(pth):
         dat = buf.partition("\n")
         color += dat[0].replace("\"","").replace("#","") + "\n" #remove extra
 
-        f.write("- type: gas\n"+"  "+id+"  "+name+"  "+specificHeat+"  "+heatCapacityRatio+"  "+molarMass+"  "+color+"  "+reagent) #write it all!
+        f.write("- type: gas\n"+"  "+id+"  "+name+"  "+specificHeat+"  "+heatCapacityRatio+"  "+molarMass+"  "+color+"  "+reagent+"  "+sprite+"  "+state) #write it all!
         num = num +1
         if num > 127:
             num = -128

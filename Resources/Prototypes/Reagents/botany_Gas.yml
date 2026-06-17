@@ -6,6 +6,8 @@
   molarMass: 1
   color: 664330
   reagent: "EZNutrient"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 25
@@ -15,6 +17,8 @@
   molarMass: 1
   color: 5b406c
   reagent: "Left4Zed"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 26
@@ -24,6 +28,8 @@
   molarMass: 1
   color: 9e9886
   reagent: "PestKiller"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 27
@@ -33,6 +39,8 @@
   molarMass: 1
   color: 49002E
   reagent: "PlantBGone"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 28
@@ -42,6 +50,8 @@
   molarMass: 1
   color: 3e901c
   reagent: "RobustHarvest"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 29
@@ -51,6 +61,8 @@
   molarMass: 1
   color: 3CB371
   reagent: "Sedin"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 30
@@ -60,6 +72,8 @@
   molarMass: 1
   color: 968395
   reagent: "WeedKiller"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 31
@@ -69,6 +83,8 @@
   molarMass: 1
   color: 77b58e
   reagent: "Ammonia"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 32
@@ -78,4 +94,6 @@
   molarMass: 1
   color: a1000b
   reagent: "Diethylamine"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 

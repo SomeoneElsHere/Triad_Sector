@@ -6,6 +6,8 @@
   molarMass: 1
   color: c4f5ff
   reagent: "Oxygen"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 83
@@ -15,6 +17,8 @@
   molarMass: 1
   color: 7e009e
   reagent: "Plasma"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 84
@@ -24,6 +28,8 @@
   molarMass: 1
   color: 66ff33
   reagent: "Tritium"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 85
@@ -33,6 +39,8 @@
   molarMass: 1
   color: 66ff33
   reagent: "CarbonDioxide"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 86
@@ -42,6 +50,8 @@
   molarMass: 1
   color: a1e1ff
   reagent: "Nitrogen"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 87
@@ -51,6 +61,8 @@
   molarMass: 1
   color: 5d88c9
   reagent: "NitrousOxide"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 88
@@ -60,4 +72,6 @@
   molarMass: 1
   color: 3a758c
   reagent: "Frezon"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 

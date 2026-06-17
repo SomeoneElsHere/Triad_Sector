@@ -7,7 +7,9 @@ using Content.Shared.Clothing;
 using Content.Shared.Inventory.Events;
 using BreathToolComponent = Content.Shared.Atmos.Components.BreathToolComponent;
 using InternalsComponent = Content.Shared.Body.Components.InternalsComponent;
-using Content.Shared.Inventory; // Goobstaiton
+using Content.Shared.Inventory;
+using System.Reflection.Emit;
+using System.Reflection; // Goobstaiton
 
 namespace Content.Server.Body.Systems;
 
@@ -74,7 +76,7 @@ public sealed class LungSystem : EntitySystem
             if (moles <= 0)
                 continue;
 
-            var reagent = _atmos.GasReagents[i];
+            var reagent = _atmos.GasReagents[i < 0 ? i+128+128 : i];
             if (reagent is null)
                 continue;
 

@@ -6,6 +6,8 @@
   molarMass: 1
   color: 800000
   reagent: "Blood"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 14
@@ -15,6 +17,8 @@
   molarMass: 1
   color: 808A51
   reagent: "InsectBlood"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 15
@@ -24,6 +28,8 @@
   molarMass: 1
   color: 2cf274
   reagent: "Slime"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 16
@@ -33,6 +39,8 @@
   molarMass: 1
   color: cd7314
   reagent: "Sap"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 17
@@ -42,6 +50,8 @@
   molarMass: 1
   color: 162581
   reagent: "CopperBlood"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 18
@@ -51,6 +61,8 @@
   molarMass: 1
   color: 7a8bf2
   reagent: "AmmoniaBlood"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 19
@@ -60,6 +72,8 @@
   molarMass: 1
   color: 2b0700
   reagent: "ZombieBlood"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 20
@@ -69,6 +83,8 @@
   molarMass: 1
   color: f4692e
   reagent: "Ichor"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 21
@@ -78,6 +94,8 @@
   molarMass: 1
   color: d8d8b0
   reagent: "Fat"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 22
@@ -87,6 +105,8 @@
   molarMass: 1
   color: 87ab08
   reagent: "Vomit"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 23
@@ -96,4 +116,6 @@
   molarMass: 1
   color: C584B8
   reagent: "GreyMatter"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 

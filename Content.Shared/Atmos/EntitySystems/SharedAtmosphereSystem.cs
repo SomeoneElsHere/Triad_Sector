@@ -28,7 +28,7 @@ namespace Content.Shared.Atmos.EntitySystems
                 int p = i;
                 if (p > 127)
                 {
-                    p = p-128;
+                    p = (((p-128)*-1)+128)*-1;
                 }
                 GasPrototypes[i] = _prototypeManager.Index<GasPrototype>(p.ToString());
             }
@@ -36,7 +36,7 @@ namespace Content.Shared.Atmos.EntitySystems
 
         public GasPrototype GetGas(int gasId) => GasPrototypes[gasId];
 
-        public GasPrototype GetGas(Gas gasId) => GasPrototypes[(int) gasId];
+        public GasPrototype GetGas(Gas gasId) => GasPrototypes[(int) gasId < 0 ? (int)gasId + 128+128 : (int)gasId ];
 
         public IEnumerable<GasPrototype> Gases => GasPrototypes;
     }

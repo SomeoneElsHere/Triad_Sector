@@ -23,7 +23,7 @@ namespace Content.Shared.Atmos
         [DataField]
         public float[] Moles = new float[Atmospherics.AdjustedNumberOfGases];
 
-        public float this[int gas] => Moles[gas];
+        public float this[int gas] => Moles[gas < 0 ? gas+128+128 : gas];
 
         [DataField("temperature")]
         [ViewVariables(VVAccess.ReadWrite)]
@@ -110,6 +110,10 @@ namespace Content.Shared.Atmos
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float GetMoles(int gasId)
         {
+            if(gasId < 0)
+            {
+                return Moles[gasId+128+128];
+            }
             return Moles[gasId];
         }
 

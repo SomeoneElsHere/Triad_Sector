@@ -6,6 +6,8 @@
   molarMass: 1
   color: 800000
   reagent: "Carpetium"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 72
@@ -15,6 +17,8 @@
   molarMass: 1
   color: 808080
   reagent: "Fiber"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 73
@@ -24,6 +28,8 @@
   molarMass: 1
   color: FFD35D
   reagent: "BuzzochloricBees"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 74
@@ -33,6 +39,8 @@
   molarMass: 1
   color: 86530E
   reagent: "GroundBee"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 75
@@ -42,6 +50,8 @@
   molarMass: 1
   color: B8A603
   reagent: "Saxoite"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 76
@@ -51,6 +61,8 @@
   molarMass: 1
   color: FDD023
   reagent: "Licoxide"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 77
@@ -60,6 +72,8 @@
   molarMass: 1
   color: e3fffb
   reagent: "Razorium"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 78
@@ -69,6 +83,8 @@
   molarMass: 1
   color: b3f1ff
   reagent: "Fresium"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 79
@@ -78,6 +94,8 @@
   molarMass: 1
   color: FF4DD2
   reagent: "Laughter"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 80
@@ -87,6 +105,8 @@
   molarMass: 1
   color: 59b23a
   reagent: "JuiceThatMakesYouWeh"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 81
@@ -96,4 +116,6 @@
   molarMass: 1
   color: a64dc5
   reagent: "JuiceThatMakesYouHew"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 

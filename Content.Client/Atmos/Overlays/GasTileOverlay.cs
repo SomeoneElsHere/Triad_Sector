@@ -63,7 +63,7 @@ namespace Content.Client.Atmos.Overlays
 
             for (var i = 0; i < _gasCount; i++)
             {
-                var gasPrototype = protoMan.Index<GasPrototype>(system.VisibleGasId[i].ToString());
+                var gasPrototype = protoMan.Index<GasPrototype>((Int32.Parse(system.VisibleGasId[i].ToString()) >= 128 ? (((Int32.Parse(system.VisibleGasId[i].ToString())- 128)*-1)+128)*-1 : Int32.Parse(system.VisibleGasId[i].ToString())).ToString() );
 
                 SpriteSpecifier overlay;
 
@@ -113,6 +113,8 @@ namespace Content.Client.Atmos.Overlays
             for (var i = 0; i < _gasCount; i++)
             {
                 var delays = _frameDelays[i];
+                if (delays == null)
+                    continue;
                 if (delays.Length == 0)
                     continue;
 
@@ -130,6 +132,8 @@ namespace Content.Client.Atmos.Overlays
             for (var i = 0; i < FireStates; i++)
             {
                 var delays = _fireFrameDelays[i];
+                if (delays == null)
+                    continue;
                 if (delays.Length == 0)
                     continue;
 

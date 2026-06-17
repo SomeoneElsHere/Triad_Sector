@@ -6,6 +6,8 @@
   molarMass: 1
   color: FAFAFA
   reagent: "Desoxyephedrine"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -116
@@ -15,6 +17,8 @@
   molarMass: 1
   color: D2FFFA
   reagent: "Ephedrine"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -115
@@ -24,6 +28,8 @@
   molarMass: 1
   color: 9A040E
   reagent: "Stimulants"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -114
@@ -33,6 +39,8 @@
   molarMass: 1
   color: 808080
   reagent: "THC"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -113
@@ -42,6 +50,8 @@
   molarMass: 1
   color: C0C0C0
   reagent: "Nicotine"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -112
@@ -51,6 +61,8 @@
   molarMass: 1
   color: 215263
   reagent: "Impedrezene"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -111
@@ -60,6 +72,8 @@
   molarMass: 1
   color: 63806e
   reagent: "SpaceDrugs"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -110
@@ -69,6 +83,8 @@
   molarMass: 1
   color: ffff00
   reagent: "Bananadine"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -109
@@ -78,6 +94,8 @@
   molarMass: 1
   color: 128e80
   reagent: "Nocturine"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -108
@@ -87,6 +105,8 @@
   molarMass: 1
   color: 000000
   reagent: "MuteToxin"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -107
@@ -96,6 +116,8 @@
   molarMass: 1
   color: 96a8b5
   reagent: "NorepinephricAcid"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -106
@@ -105,6 +127,8 @@
   molarMass: 1
   color: 96a8b5
   reagent: "TearGas"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: -105
@@ -114,4 +138,6 @@
   molarMass: 1
   color: EE35FF
   reagent: "Happiness"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 

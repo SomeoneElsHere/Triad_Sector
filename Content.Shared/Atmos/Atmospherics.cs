@@ -671,6 +671,10 @@ reagent_name_insuzine = -125,
 reagent_name_opporozidone = -124,
 
 reagent_name_necrosol = -123,
+
+reagent_name_necrosol_1 = -122,
+
+reagent_name_necrosol_2 = -121,
 reagent_name_psicodine = -120,
 
 reagent_name_potassium_iodide = -119,
@@ -703,6 +707,7 @@ reagent_name_tear_gas = -106,
 
 reagent_name_happiness = -105,
 
+reagent_name_thermite_1 = -104,
 reagent_name_thermite = -103,
 
 reagent_name_napalm = -102,

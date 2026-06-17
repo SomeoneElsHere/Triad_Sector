@@ -1,11 +1,13 @@
 - type: gas
   id: 51
-  name: "reagent_name_aluminium # _we use real words here."
+  name: "reagent_name_aluminium"
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 848789
-  reagent: "Aluminium # We use real words here."
+  reagent: "Aluminium"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 52
@@ -15,6 +17,8 @@
   molarMass: 1
   color: 22282b
   reagent: "Carbon"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 53
@@ -24,6 +28,8 @@
   molarMass: 1
   color: a2ff00
   reagent: "Chlorine"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 54
@@ -33,6 +39,8 @@
   molarMass: 1
   color: b05b3c
   reagent: "Copper"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 55
@@ -42,6 +50,8 @@
   molarMass: 1
   color: ba85cc
   reagent: "Fluorine"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 56
@@ -51,6 +61,8 @@
   molarMass: 1
   color: F7C430
   reagent: "Gold"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 57
@@ -60,6 +72,8 @@
   molarMass: 1
   color: cccccc
   reagent: "Hydrogen"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 58
@@ -69,6 +83,8 @@
   molarMass: 1
   color: BC8A00
   reagent: "Iodine"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 59
@@ -78,6 +94,8 @@
   molarMass: 1
   color: 434b4d
   reagent: "Iron"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 60
@@ -87,6 +105,8 @@
   molarMass: 1
   color: d6c0a7
   reagent: "Lithium"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 61
@@ -96,6 +116,8 @@
   molarMass: 1
   color: 929296
   reagent: "Mercury"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 62
@@ -105,6 +127,8 @@
   molarMass: 1
   color: c6c8cc
   reagent: "Potassium"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 63
@@ -114,6 +138,8 @@
   molarMass: 1
   color: f5da9a
   reagent: "Phosphorus"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 64
@@ -123,6 +149,8 @@
   molarMass: 1
   color: 00ff04
   reagent: "Radium"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 65
@@ -132,6 +160,8 @@
   molarMass: 1
   color: 364266
   reagent: "Silicon"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 66
@@ -141,6 +171,8 @@
   molarMass: 1
   color: d0d0d0
   reagent: "Silver"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 67
@@ -150,6 +182,8 @@
   molarMass: 1
   color: fff385
   reagent: "Sulfur"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 68
@@ -159,6 +193,8 @@
   molarMass: 1
   color: a7b3d6
   reagent: "Sodium"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 69
@@ -168,6 +204,8 @@
   molarMass: 1
   color: 8fa191
   reagent: "Uranium"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
 - type: gas
   id: 70
@@ -177,4 +215,6 @@
   molarMass: 1
   color: bababa
   reagent: "Zinc"
+  gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
+  gasOverlayState: plasma
 
