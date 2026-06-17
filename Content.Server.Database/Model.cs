@@ -326,6 +326,26 @@ namespace Content.Server.Database
                 .OwnsOne(p => p.HWId)
                 .Property(p => p.Type)
                 .HasDefaultValue(HwidType.Legacy);
+<<<<<<< HEAD
+
+            ModelBan.OnModelCreating(modelBuilder);
+            // Triad: tamper protection indexes
+            modelBuilder.Entity<TriadShipyardAuditEvent>()
+                .HasIndex(a => new { a.PlayerUserId, a.At });
+
+            modelBuilder.Entity<TriadShipyardAuditEvent>()
+                .HasIndex(a => new { a.EventType, a.At });
+
+            modelBuilder.Entity<TriadShipyardAuditEvent>()
+                .HasIndex(a => new { a.ShipHash, a.At });
+
+            // One active permit per player (the per-player legacy-onboarding bypass).
+            modelBuilder.Entity<TriadShipyardMigrationPermit>()
+                .HasIndex(p => p.PlayerUserId)
+                .IsUnique();
+            // End Triad
+=======
+>>>>>>> parent of b3d2c80af8 (ShipSaving Tamper Protection: It's over 9000 Edition. (#172))
         }
 
         public virtual IQueryable<AdminLog> SearchLogs(IQueryable<AdminLog> query, string searchText)
