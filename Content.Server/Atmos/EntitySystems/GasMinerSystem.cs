@@ -23,9 +23,24 @@ public sealed class GasMinerSystem : SharedGasMinerSystem
 
     private void OnMinerUpdated(Entity<GasMinerComponent> ent, ref AtmosDeviceUpdateEvent args)
     {
-        var miner = ent.Comp;
+        GasMinerComponent miner;
+
+        try
+        {
+            miner = ent.Comp;  
+        }
+        catch
+        {
+            ent.Comp.SpawnGas = ent.Comp.SpawnGas;
+        }
+        finally
+        {
+            miner = ent.Comp;
+        }
+        
         var oldState = miner.MinerState;
         float toSpawn;
+        
 
         if (!GetValidEnvironment(ent, out var environment) || !Transform(ent).Anchored)
         {

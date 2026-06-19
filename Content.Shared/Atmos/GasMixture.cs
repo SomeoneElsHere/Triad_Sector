@@ -122,7 +122,7 @@ namespace Content.Shared.Atmos
         {
             return GetMoles((int)gas);
         }
-
+        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetMoles(int gasId, float quantity)
         {
@@ -130,7 +130,13 @@ namespace Content.Shared.Atmos
                 throw new ArgumentException($"Invalid quantity \"{quantity}\" specified!", nameof(quantity));
 
             if (!Immutable)
+            {
+                if (gasId < 0)
+                {
+                    Moles[gasId+128+128] = quantity;
+                }
                 Moles[gasId] = quantity;
+            }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -150,7 +156,7 @@ namespace Content.Shared.Atmos
 
             // Clamping is needed because x - x can be negative with floating point numbers. If we don't
             // clamp here, the caller always has to call GetMoles(), clamp, then SetMoles().
-            ref var moles = ref Moles[gasId];
+            ref var moles = ref Moles[gasId < 0 ? gasId+128+128 : gasId];
             moles = MathF.Max(moles + quantity, 0);
         }
 

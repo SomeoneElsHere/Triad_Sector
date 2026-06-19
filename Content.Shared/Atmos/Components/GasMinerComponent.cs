@@ -1,5 +1,6 @@
 using Robust.Shared.Serialization;
 using Robust.Shared.GameStates;
+using Content.Shared._CorvaxNext.Silicons.Borgs;
 
 namespace Content.Shared.Atmos.Components;
 
@@ -32,9 +33,21 @@ public sealed partial class GasMinerComponent : Component
     /// <summary>
     ///     Gas to spawn.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)]
+    private Gas _spawnGas;
+
+    [ViewVariables(VVAccess.ReadWrite)] //cant apply enum properly
     [DataField(required: true)]
-    public Gas SpawnGas;
+    public Gas SpawnGas
+    {
+        get
+        {
+           return _spawnGas; 
+        } 
+        set
+        {
+            _spawnGas = (int)value >= 128 ? (Gas)((((((int)value)- 128)*-1)+128)*-1) : value;
+        }
+    }
 
     /// <summary>
     ///     Temperature in Kelvin.

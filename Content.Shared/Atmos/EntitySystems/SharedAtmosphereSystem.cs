@@ -34,7 +34,7 @@ namespace Content.Shared.Atmos.EntitySystems
             }
         }
 
-        public GasPrototype GetGas(int gasId) => GasPrototypes[gasId];
+        public GasPrototype GetGas(int gasId) => GasPrototypes[(int) gasId < 0 ? (int)gasId + 128+128 : (int)gasId ];
 
         public GasPrototype GetGas(Gas gasId) => GasPrototypes[(int) gasId < 0 ? (int)gasId + 128+128 : (int)gasId ];
 

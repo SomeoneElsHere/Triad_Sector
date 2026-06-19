@@ -150,16 +150,30 @@ public sealed class RespiratorSystem : EntitySystem
             
             //get those extra gases in your system!!!
             var s =  new Solution();
+            List<ReagentQuantity> q = new List<ReagentQuantity>();
             foreach(ReagentQuantity r in sol.Contents)
             {
                 if (r.Reagent.Prototype == "Oxygen" || r.Reagent.Prototype == "Nitrogen" || r.Reagent.Prototype == "CarbonDioxide")
                     continue;
                 s.AddReagent(r);
+                
+                q.Add(r);
+               
+            }
+            foreach(var a in lung.Air)
+            {
+                if (a.gas == (Gas)0 || a.gas == (Gas)1 || a.gas == (Gas)2)
+                    continue;
+                lung.Air.AdjustMoles(a.gas, a.moles*Atmospherics.BreathMolesToReagentMultiplier*-1);
+            }
+            foreach(ReagentQuantity r in q)
+            {
                 //those gases are gone
-                _solutionContainerSystem.RemoveReagent((Entity<SolutionComponent>)lung.Solution,r);
+                 _solutionContainerSystem.RemoveReagent((Entity<SolutionComponent>)lung.Solution,r);
             }
             var steam = EntityManager.GetComponent<BloodstreamComponent>(uid);
             Console.WriteLine(_bloodstreamSystem.TryAddToChemicals(uid, s, steam));
+            _solutionContainerSystem.UpdateChemicals((Entity<SolutionComponent>)lung.Solution);
             
         }
         
