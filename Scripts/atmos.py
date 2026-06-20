@@ -83,15 +83,30 @@ text = Path(base + "Resources/Textures/_DV/Effects/atmospherics.rsi")
 os.chdir(text)
 pos = 0
 for n in names:
-    if (str(colors[pos]).endswith("#") or (not str(colors[pos])[-1].isdigit)):
+    if (str(colors[pos]).endswith("#")):
+        pos += 1
+        continue
+    try:
+        col = matplotlib.colors.to_rgb("#"+colors[pos])
+    except:
         pos += 1
         continue
     newName = n+"_gas.png"
     shutil.copy(Path("water_vapor.png"),Path(newName))
     png = Image.open(newName)
+    print("        {\n")
+    print("            \"name\": \""+newName+"\",\n")
+    print("            \"delays\": [\n")
+    print("                [\n")
+    for x in range(119):
+        print("                    0.09,\n")
+    print("                ]\n")
+    print("            ]\n")
+    print("        },\n")
+    
     png = png.convert('RGBA')
-    col = matplotlib.colors.to_rgb("#"+colors[pos])
-    print(colors[pos]+" : "+str(col[0])+str(col[1])+str(col[2]))
+    
+    #print(colors[pos]+" : "+str(col[0])+str(col[1])+str(col[2]))
     c = RGBTransform().mix_with((col[0]*256,col[1]*256,col[2]*256),factor=.30).applied_to(png) #https://stackoverflow.com/questions/32578346/how-to-change-color-of-image-using-python
     c.save(newName)
     pos += 1

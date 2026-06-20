@@ -173,7 +173,7 @@ public sealed class RespiratorSystem : EntitySystem
                  _solutionContainerSystem.RemoveReagent((Entity<SolutionComponent>)lung.Solution,r);
             }
             var steam = EntityManager.GetComponent<BloodstreamComponent>(uid);
-            Console.WriteLine(_bloodstreamSystem.TryAddToChemicals(uid, s, steam));
+            _bloodstreamSystem.TryAddToChemicals(uid, s, steam);
             _solutionContainerSystem.UpdateChemicals((Entity<SolutionComponent>)lung.Solution);
             
         }

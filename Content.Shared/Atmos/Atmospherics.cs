@@ -415,7 +415,7 @@ namespace Content.Shared.Atmos
     ///     Gases to Ids. Keep these updated with the prototypes!
     /// </summary>
     [Serializable, NetSerializable]
-    public enum Gas : sbyte
+    public enum Gas : byte
     {
         Oxygen = 0,
         Nitrogen = 1,
@@ -430,353 +430,355 @@ namespace Content.Shared.Atmos
         Healium = 10, //Funky/Goob
         Nitrium = 11, //Funky/Goob
 		Pluoxium = 12, //Funky/Goob
-       reagent_name_blood = 13,
+       blood = 13,
 
-reagent_name_insect_blood = 14,
+insect_blood = 14,
 
-reagent_name_slime = 15,
+slime = 15,
 
-reagent_name_sap = 16,
+sap = 16,
 
-reagent_name_hemocyanin_blood = 17,
+hemocyanin_blood = 17,
 
-reagent_name_ammonia_blood = 18,
+ammonia_blood = 18,
 
-reagent_name_zombie_blood = 19,
+zombie_blood = 19,
 
-reagent_name_ichor = 20,
+ichor = 20,
 
-reagent_name_fat = 21,
+fat = 21,
 
-reagent_name_vomit = 22,
+vomit = 22,
 
-reagent_name_grey_matter = 23,
+grey_matter = 23,
 
-reagent_name_e_z_nutrient = 24,
+e_z_nutrient = 24,
 
-reagent_name_left4_zed = 25,
+left4_zed = 25,
 
-reagent_name_pest_killer = 26,
+pest_killer = 26,
 
-reagent_name_plant_b_gone = 27,
+plant_b_gone = 27,
 
-reagent_name_robust_harvest = 28,
+robust_harvest = 28,
 
-reagent_name_sedin = 29,
+sedin = 29,
 
-reagent_name_weed_killer = 30,
+weed_killer = 30,
 
-reagent_name_ammonia = 31,
+ammonia = 31,
 
-reagent_name_diethylamine = 32,
+diethylamine = 32,
 
-reagent_name_acetone = 33,
+acetone = 33,
 
-reagent_name_phenol = 34,
+phenol = 34,
 
-reagent_name_charcoal = 35,
+charcoal = 35,
 
-reagent_name_ash = 36,
+ash = 36,
 
-reagent_name_sodium_carbonate = 37,
+sodium_carbonate = 37,
 
-reagent_name_artifexium = 38,
+artifexium = 38,
 
-reagent_name_benzene = 39,
+benzene = 39,
 
-reagent_name_hydroxide = 40,
+hydroxide = 40,
 
-reagent_name_sodium_hydroxide = 41,
+sodium_hydroxide = 41,
 
-reagent_name_fersilicite = 42,
+fersilicite = 42,
 
-reagent_name_sodium_polyacrylate = 43,
+sodium_polyacrylate = 43,
 
-reagent_name_cellulose = 44,
+cellulose = 44,
 
-reagent_name_rororium = 45,
+rororium = 45,
 
-reagent_name_bleach = 46,
+bleach = 46,
 
-reagent_name_space_cleaner = 47,
+space_cleaner = 47,
 
-reagent_name_soap = 48,
+soap = 48,
 
-reagent_name_space_lube = 49,
+space_lube = 49,
 
-reagent_name_space_glue = 50,
+space_glue = 50,
 
-reagent_name_aluminium = 51,
+aluminium = 51,
 
-reagent_name_carbon = 52,
+carbon = 52,
 
-reagent_name_chlorine = 53,
+chlorine = 53,
 
-reagent_name_copper = 54,
+copper = 54,
 
-reagent_name_fluorine = 55,
+fluorine = 55,
 
-reagent_name_gold = 56,
+gold = 56,
 
-reagent_name_hydrogen = 57,
+hydrogen = 57,
 
-reagent_name_iodine = 58,
+iodine = 58,
 
-reagent_name_iron = 59,
+iron = 59,
 
-reagent_name_lithium = 60,
+lithium = 60,
 
-reagent_name_mercury = 61,
+mercury = 61,
 
-reagent_name_potassium = 62,
+potassium = 62,
 
-reagent_name_phosphorus = 63,
+phosphorus = 63,
 
-reagent_name_radium = 64,
+radium = 64,
 
-reagent_name_silicon = 65,
+silicon = 65,
 
-reagent_name_silver = 66,
+silver = 66,
 
-reagent_name_sulfur = 67,
+sulfur = 67,
 
-reagent_name_sodium = 68,
+sodium = 68,
 
-reagent_name_uranium = 69,
+uranium = 69,
 
-reagent_name_zinc = 70,
+zinc = 70,
 
-reagent_name_carpetium = 71,
+carpetium = 71,
 
-reagent_name_fiber = 72,
+fiber = 72,
 
-reagent_name_buzzochloric_bees = 73,
+buzzochloric_bees = 73,
 
-reagent_name_ground_bee = 74,
+ground_bee = 74,
 
-reagent_name_saxoite = 75,
+saxoite = 75,
 
-reagent_name_licoxide = 76,
+licoxide = 76,
 
-reagent_name_razorium = 77,
+razorium = 77,
 
-reagent_name_fresium = 78,
+fresium = 78,
 
-reagent_name_laughter = 79,
+laughter = 79,
 
-reagent_name_weh = 80,
+weh = 80,
 
-reagent_name_hew = 81,
+hew = 81,
 
-reagent_name_oxygen = 82,
+oxygen = 82,
 
-reagent_name_plasma = 83,
+plasma = 83,
 
-reagent_name_tritium = 84,
+tritium = 84,
 
-reagent_name_carbon_dioxide = 85,
+carbon_dioxide = 85,
 
-reagent_name_nitrogen = 86,
+nitrogen = 86,
 
-reagent_name_nitrous_oxide = 87,
+nitrous_oxide = 87,
 
-reagent_name_frezon = 88,
+frezon = 88,
 
-reagent_name_cryptobiolin = 89,
+cryptobiolin = 89,
 
-reagent_name_dylovene = 90,
+dylovene = 90,
 
-reagent_name_diphenhydramine = 91,
+diphenhydramine = 91,
 
-reagent_name_ethylredoxrazine = 92,
+ethylredoxrazine = 92,
 
-reagent_name_arithrazine = 93,
+arithrazine = 93,
 
-reagent_name_bicaridine = 94,
+bicaridine = 94,
 
-reagent_name_cryoxadone = 95,
+cryoxadone = 95,
 
-reagent_name_doxarubixadone = 96,
+doxarubixadone = 96,
 
-reagent_name_dermaline = 97,
+dermaline = 97,
 
-reagent_name_dexalin = 98,
+dexalin = 98,
 
-reagent_name_dexalin_plus = 99,
+dexalin_plus = 99,
 
-reagent_name_epinephrine = 100,
+epinephrine = 100,
 
-reagent_name_hyronalin = 101,
+hyronalin = 101,
 
-reagent_name_ipecac = 102,
+ipecac = 102,
 
-reagent_name_inaprovaline = 103,
+inaprovaline = 103,
 
-reagent_name_kelotane = 104,
+kelotane = 104,
 
-reagent_name_leporazine = 105,
+leporazine = 105,
 
-reagent_name_barozine = 106,
+barozine = 106,
 
-reagent_name_phalanximine = 107,
+phalanximine = 107,
 
-reagent_name_polypyrylium_oligomers = 108,
+polypyrylium_oligomers = 108,
 
-reagent_name_ambuzol = 109,
+ambuzol = 109,
 
-reagent_name_ambuzol_plus = 110,
+ambuzol_plus = 110,
 
-reagent_name_pulped_banana_peel = 111,
+pulped_banana_peel = 111,
 
-reagent_name_saline = 112,
+saline = 112,
 
-reagent_name_siderlac = 113,
+siderlac = 113,
 
-reagent_name_stellibinin = 114,
+stellibinin = 114,
 
-reagent_name_synaptizine = 115,
+synaptizine = 115,
 
-reagent_name_tranexamic_acid = 116,
+tranexamic_acid = 116,
 
-reagent_name_tricordrazine = 117,
+tricordrazine = 117,
 
-reagent_name_lipozine = 118,
+lipozine = 118,
 
-reagent_name_omnizine = 119,
+omnizine = 119,
 
-reagent_name_ultravasculine = 120,
+ultravasculine = 120,
 
-reagent_name_oculine = 121,
+oculine = 121,
 
-reagent_name_cognizine = 122,
+cognizine = 122,
 
-reagent_name_ethyloxyephedrine = 123,
+ethyloxyephedrine = 123,
 
-reagent_name_diphenylmethylamine = 124,
+diphenylmethylamine = 124,
 
-reagent_name_sigynate = 125,
+sigynate = 125,
 
-reagent_name_lacerinol = 126,
+lacerinol = 126,
 
-reagent_name_puncturase = 127,
+puncturase = 127,
 
-reagent_name_bruizine = -128,
+bruizine = 128,
 
-reagent_name_holywater = -127,
+holywater = 129,
 
-reagent_name_pyrazine = -126,
+pyrazine = 130,
 
-reagent_name_insuzine = -125,
+insuzine = 131,
 
-reagent_name_opporozidone = -124,
+opporozidone = 132,
 
-reagent_name_necrosol = -123,
+necrosol = 133,
 
-reagent_name_necrosol_1 = -122,
+ necrosol_1 = 134,
 
-reagent_name_necrosol_2 = -121,
-reagent_name_psicodine = -120,
+ necrosol_2 = 135,
 
-reagent_name_potassium_iodide = -119,
+psicodine = 136,
 
-reagent_name_haloperidol = -118,
+potassium_iodide = 137,
 
-reagent_name_desoxyephedrine = -117,
+haloperidol = 138,
 
-reagent_name_ephedrine = -116,
+desoxyephedrine = 139,
 
-reagent_name_stimulants = -115,
+ephedrine = 140,
 
-reagent_name_thc = -114,
+stimulants = 141,
 
-reagent_name_nicotine = -113,
+thc = 142,
 
-reagent_name_impedrezene = -112,
+nicotine = 143,
 
-reagent_name_space_drugs = -111,
+impedrezene = 144,
 
-reagent_name_bananadine = -110,
+space_drugs = 145,
 
-reagent_name_nocturine = -109,
+bananadine = 146,
 
-reagent_name_mute_toxin = -108,
+nocturine = 147,
 
-reagent_name_norepinephric_acid = -107,
+mute_toxin = 148,
 
-reagent_name_tear_gas = -106,
+norepinephric_acid = 149,
 
-reagent_name_happiness = -105,
+tear_gas = 150,
 
-reagent_name_thermite_1 = -104,
-reagent_name_thermite = -103,
+happiness = 151,
 
-reagent_name_napalm = -102,
+ thermite_1 = 152,
 
-reagent_name_phlogiston = -101,
+thermite = 153,
 
-reagent_name_chlorine_trifluoride = -100,
+napalm = 154,
 
-reagent_name_foaming_agent = -99,
+phlogiston = 155,
 
-reagent_name_welding_fuel = -98,
+chlorine_trifluoride = 156,
 
-reagent_name_fluorosurfactant = -97,
+foaming_agent = 157,
 
-reagent_name_toxin = -96,
+welding_fuel = 158,
 
-reagent_name_carpotoxin = -95,
+fluorosurfactant = 159,
 
-reagent_name_chloral_hydrate = -94,
+toxin = 160,
 
-reagent_name_gastrotoxin = -93,
+carpotoxin = 161,
 
-reagent_name_mold = -92,
+chloral_hydrate = 162,
 
-reagent_name_polytrinic_acid = -91,
+gastrotoxin = 163,
 
-reagent_name_ferrochromic_acid = -90,
+mold = 164,
 
-reagent_name_fluorosulfuric_acid = -89,
+polytrinic_acid = 165,
 
-reagent_name_sulfuric_acid = -88,
+ferrochromic_acid = 166,
 
-reagent_name_unstable_mutagen = -87,
+fluorosulfuric_acid = 167,
 
-reagent_name_heartbreaker_toxin = -86,
+sulfuric_acid = 168,
 
-reagent_name_lexorin = -85,
+unstable_mutagen = 169,
 
-reagent_name_mindbreaker_toxin = -84,
+heartbreaker_toxin = 170,
 
-reagent_name_histamine = -83,
+lexorin = 171,
 
-reagent_name_theobromine = -82,
+mindbreaker_toxin = 172,
 
-reagent_name_amatoxin = -81,
+histamine = 173,
 
-reagent_name_vent_crud = -80,
+theobromine = 174,
 
-reagent_name_romerol = -79,
+amatoxin = 175,
 
-reagent_name_uncooked_animal_proteins = -78,
+vent_crud = 176,
 
-reagent_name_allicin = -77,
+romerol = 177,
 
-reagent_name_pax = -76,
+uncooked_animal_proteins = 178,
 
-reagent_name_honk = -75,
+allicin = 179,
 
-reagent_name_lead = -74,
+pax = 180,
 
-reagent_name_bungotoxin = -73,
+honk = 181,
 
-reagent_name_vestine = -72,
+lead = 182,
 
-reagent_name_tazinide = -71,
+bungotoxin = 183,
 
-reagent_name_lipolicide = -70,
+vestine = 184,
 
-reagent_name_mechanotoxin = -69,
+tazinide = 185,
+
+lipolicide = 186,
+
+mechanotoxin = 187
     }
     
 }
