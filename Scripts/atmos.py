@@ -83,7 +83,8 @@ text = Path(base + "Resources/Textures/_DV/Effects/atmospherics.rsi")
 os.chdir(text)
 pos = 0
 for n in names:
-    if (str(colors[pos]).endswith("#")):
+    if (str(colors[pos]).endswith("#") or (not str(colors[pos])[-1].isdigit)):
+        pos += 1
         continue
     newName = n+"_gas.png"
     shutil.copy(Path("water_vapor.png"),Path(newName))
