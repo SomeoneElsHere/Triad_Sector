@@ -23,7 +23,7 @@ namespace Content.Shared.Atmos
         [DataField]
         public float[] Moles = new float[Atmospherics.AdjustedNumberOfGases];
 
-        public float this[int gas] => Moles[gas < 0 ? gas+128+128 : gas];
+        public float this[int gas] => Moles[gas];
 
         [DataField("temperature")]
         [ViewVariables(VVAccess.ReadWrite)]
@@ -110,10 +110,6 @@ namespace Content.Shared.Atmos
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float GetMoles(int gasId)
         {
-            if(gasId < 0)
-            {
-                return Moles[gasId+128+128];
-            }
             return Moles[gasId];
         }
 
@@ -122,7 +118,7 @@ namespace Content.Shared.Atmos
         {
             return GetMoles((int)gas);
         }
-        
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetMoles(int gasId, float quantity)
         {
@@ -131,10 +127,7 @@ namespace Content.Shared.Atmos
 
             if (!Immutable)
             {
-                if (gasId < 0)
-                {
-                    Moles[gasId+128+128] = quantity;
-                }
+                
                 Moles[gasId] = quantity;
             }
         }
@@ -156,7 +149,7 @@ namespace Content.Shared.Atmos
 
             // Clamping is needed because x - x can be negative with floating point numbers. If we don't
             // clamp here, the caller always has to call GetMoles(), clamp, then SetMoles().
-            ref var moles = ref Moles[gasId < 0 ? gasId+128+128 : gasId];
+            ref var moles = ref Moles[gasId];
             moles = MathF.Max(moles + quantity, 0);
         }
 

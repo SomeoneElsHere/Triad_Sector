@@ -76,7 +76,7 @@ public sealed class LungSystem : EntitySystem
             if (moles <= 0)
                 continue;
 
-            var reagent = _atmos.GasReagents[i < 0 ? i+128+128 : i];
+            var reagent = _atmos.GasReagents[i];
             if (reagent is null)
                 continue;
 

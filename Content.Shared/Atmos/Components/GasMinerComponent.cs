@@ -33,21 +33,10 @@ public sealed partial class GasMinerComponent : Component
     /// <summary>
     ///     Gas to spawn.
     /// </summary>
-    private Gas _spawnGas;
-
-    [ViewVariables(VVAccess.ReadWrite)] //cant apply enum properly
+    [ViewVariables(VVAccess.ReadWrite)]
     [DataField(required: true)]
-    public Gas SpawnGas
-    {
-        get
-        {
-           return _spawnGas; 
-        } 
-        set
-        {
-            _spawnGas = (int)value >= 128 ? (Gas)((((((int)value)- 128)*-1)+128)*-1) : value;
-        }
-    }
+    public Gas SpawnGas;
+    
 
     /// <summary>
     ///     Temperature in Kelvin.

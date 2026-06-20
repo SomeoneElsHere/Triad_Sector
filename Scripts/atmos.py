@@ -1,10 +1,17 @@
 import os
 from pathlib import Path
+from PIL import Image
+from transforms import RGBTransform
+import shutil
+import matplotlib.colors
 #get path
 pth = os.getcwd()
 pth = pth.partition("Scripts")[0]
+base = pth
 pth += "Resources/Prototypes/Reagents"
 pth = Path(pth)
+colors = list()
+names = list()
 #go to gases
 os.chdir(pth)
 if not Path.exists(pth):
@@ -38,18 +45,21 @@ for file in os.listdir(pth):
         color = "color: "
         reagent = "reagent: "
         sprite= "gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi\n"
-        state = "gasOverlayState: plasma\n\n"
+        state = "gasOverlayState: "
 
         buf = buf.partition("id: ")[2]
         dat = buf.partition("\n")
-        reagent += "\""+dat[0]+"\"" + "\n"
+        reagent += ""+dat[0]+"" + "\n"
         
         buf = buf.partition("name: ")[2]
         dat = buf.partition("\n")
-        name += "\""+dat[0].replace("-","_")+"\"" + "\n"
+        d = dat[0].replace("reagent-name-","").replace("-","_")
+        name += ""+d+"" + "\n"
         if not name.find("_"):
             continue
-        print(dat[0].replace("-","_")+" = "+str(num)+",\n")
+        print(d+" = "+str(num)+",\n")
+        names.append(d)
+        state += d+"_gas \n\n"
         if buf.find("metallic"):
             specificHeat += "0.5" + "\n" #https://www.engineersedge.com/materials/specific_heat_capacity_of_metals_13259.html, Btu/lb-C is around that number ehhh
             heatCapacityRatio += "1.0"+ "\n" #https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Thermodynamics_and_Chemical_Equilibrium_(Ellgen)/07%3A_State_Functions_and_The_First_Law/7.14%3A_Heat_Capacities_of_Solids-_the_Law_of_Dulong_and_Petit cp/cv ~= 1
@@ -61,21 +71,26 @@ for file in os.listdir(pth):
         buf = buf.partition("color: ")[2]
         dat = buf.partition("\n")
         color += dat[0].replace("\"","").replace("#","") + "\n" #remove extra
+        colors.append(dat[0].replace("\"","").replace("#",""))
 
         f.write("- type: gas\n"+"  "+id+"  "+name+"  "+specificHeat+"  "+heatCapacityRatio+"  "+molarMass+"  "+color+"  "+reagent+"  "+sprite+"  "+state) #write it all!
         num = num +1
-        if num > 127:
-            num = -128
         f.flush()
     f.close()
     nf.close()
 
-
-
-    
-         
-
-
-    
-
-    
+text = Path(base + "Resources/Textures/_DV/Effects/atmospherics.rsi")
+os.chdir(text)
+pos = 0
+for n in names:
+    if (str(colors[pos]).endswith("#")):
+        continue
+    newName = n+"_gas.png"
+    shutil.copy(Path("water_vapor.png"),Path(newName))
+    png = Image.open(newName)
+    png = png.convert('RGBA')
+    col = matplotlib.colors.to_rgb("#"+colors[pos])
+    print(colors[pos]+" : "+str(col[0])+str(col[1])+str(col[2]))
+    c = RGBTransform().mix_with((col[0]*256,col[1]*256,col[2]*256),factor=.30).applied_to(png) #https://stackoverflow.com/questions/32578346/how-to-change-color-of-image-using-python
+    c.save(newName)
+    pos += 1

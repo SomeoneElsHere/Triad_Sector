@@ -25,18 +25,14 @@ namespace Content.Shared.Atmos.EntitySystems
 
             for (var i = 0; i < Atmospherics.TotalNumberOfGases; i++)
             {
-                int p = i;
-                if (p > 127)
-                {
-                    p = (((p-128)*-1)+128)*-1;
-                }
-                GasPrototypes[i] = _prototypeManager.Index<GasPrototype>(p.ToString());
+
+                GasPrototypes[i] = _prototypeManager.Index<GasPrototype>(i.ToString());
             }
         }
 
-        public GasPrototype GetGas(int gasId) => GasPrototypes[(int) gasId < 0 ? (int)gasId + 128+128 : (int)gasId ];
+        public GasPrototype GetGas(int gasId) => GasPrototypes[(int) gasId];
 
-        public GasPrototype GetGas(Gas gasId) => GasPrototypes[(int) gasId < 0 ? (int)gasId + 128+128 : (int)gasId ];
+        public GasPrototype GetGas(Gas gasId) => GasPrototypes[(int) gasId];
 
         public IEnumerable<GasPrototype> Gases => GasPrototypes;
     }

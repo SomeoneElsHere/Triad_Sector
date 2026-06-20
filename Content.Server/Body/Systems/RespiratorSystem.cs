@@ -23,6 +23,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.FixedPoint;
+using Robust.Shared.Reflection;
 
 namespace Content.Server.Body.Systems;
 
@@ -38,7 +39,7 @@ public sealed class RespiratorSystem : EntitySystem
     [Dependency] private readonly LungSystem _lungSystem = default!;
     [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
     [Dependency] private readonly StomachSystem _stomachSystem = default!;
-    
+    [Dependency] private readonly IReflectionManager _reflection = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
