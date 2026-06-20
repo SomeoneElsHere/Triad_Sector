@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Numerics;
 using Content.Client.Atmos.Components;
 using Content.Client.Atmos.EntitySystems;
@@ -15,14 +16,16 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
+
 namespace Content.Client.Atmos.Overlays
 {
     public sealed class GasTileOverlay : Overlay
     {
         private readonly IEntityManager _entManager;
         private readonly IMapManager _mapManager;
-        private readonly SharedTransformSystem _xformSys;
 
+        private readonly ISawmill _sawmill = default!;
+        private readonly SharedTransformSystem _xformSys;
         public override OverlaySpace Space => OverlaySpace.WorldSpaceEntities | OverlaySpace.WorldSpaceBelowWorld;
         private readonly ShaderInstance _shader;
 
@@ -63,7 +66,7 @@ namespace Content.Client.Atmos.Overlays
 
             for (var i = 0; i < _gasCount; i++)
             {
-                var gasPrototype = protoMan.Index<GasPrototype>((Int32.Parse(system.VisibleGasId[i].ToString()) >= 128 ? (((Int32.Parse(system.VisibleGasId[i].ToString())- 128)*-1)+128)*-1 : Int32.Parse(system.VisibleGasId[i].ToString())).ToString() );
+                var gasPrototype = protoMan.Index<GasPrototype>(system.VisibleGasId[i].ToString());
 
                 SpriteSpecifier overlay;
 
@@ -147,7 +150,7 @@ namespace Content.Client.Atmos.Overlays
             }
         }
 
-        protected override void Draw(in OverlayDrawArgs args)
+        protected override void Draw(in OverlayDrawArgs args) 
         {
             if (args.MapId == MapId.Nullspace)
                 return;
@@ -216,18 +219,56 @@ namespace Content.Client.Atmos.Overlays
 
                         while (enumerator.MoveNext(out var gas))
                         {
-                            if (gas.Opacity == null!)
-                                continue;
 
                             var tilePosition = chunk.Origin + (enumerator.X, enumerator.Y);
                             if (!localBounds.Contains(tilePosition))
                                 continue;
+                            
+                            
+                            var thelist = state.frames;
+                            int max = 0;
+                            List<Texture[]> vect = new List<Texture[]>();
+                            Queue<Tuple<Texture[],int>> que = new Queue<Tuple<Texture[],int>>();
 
-                            for (var i = 0; i < state.gasCount; i++)
+                            //so basically I went down a wrong path thinking that there was some issue here, turns out there wasnt and I forgot meta.json existed
+                            //but this slower method actually is a bit better since it combats null values of a list and injection issues? Likely to be reverted.
+
+                            foreach (Texture[] lis in thelist) //this is here since we cant access state.frames[i]
                             {
+                                if (lis == null)
+                                {
+                                    continue;
+                                }
+                                if(max < Array.IndexOf(thelist, lis))
+                                    max = Array.IndexOf(thelist, lis);
+                                vect[Array.IndexOf(thelist, lis)] = lis;
+                            }
+                            for (int q = 0; q<max; q++) //sorting
+                            {
+                                if (vect[q] == null)
+                                {
+                                    continue;
+                                }
+                                que.Enqueue(Tuple.Create<Texture[],int>(vect[q],q));
+                            }
+
+                            
+                            while (que.Count != 0) //deal em out!
+                            {
+                                var tup = que.Dequeue();
+                                int i = tup.Item2;
+                                var lis = tup.Item1;
+                                if (gas.Opacity == null || gas.Opacity.Length <= i) //thread fuckery
+                                {
+                                    break;
+                                }
+                                if (lis == null || lis.Length <= state.frameCounter[i]) //more thread fuckery
+                                {
+                                    continue;
+                                }
                                 var opacity = gas.Opacity[i];
                                 if (opacity > 0)
-                                    state.drawHandle.DrawTexture(state.frames[i][state.frameCounter[i]], tilePosition, Color.White.WithAlpha(opacity));
+                                    state.drawHandle.DrawTexture(lis[state.frameCounter[i]], tilePosition, Color.White.WithAlpha(opacity));
                             }
                         }
                     }
@@ -288,9 +329,10 @@ namespace Content.Client.Atmos.Overlays
                     for (var i = 0; i < atmos.OverlayData.Opacity.Length; i++)
                     {
                         var opacity = atmos.OverlayData.Opacity[i];
-
-                        if (opacity > 0)
-                            handle.DrawTexture(_frames[i][_frameCounter[i]], tilePosition, Color.White.WithAlpha(opacity));
+                            if (opacity > 0)
+                                handle.DrawTexture(_frames[i][_frameCounter[i]], tilePosition, Color.White.WithAlpha(opacity));
+                        
+                        
                     }
                 }
             }
