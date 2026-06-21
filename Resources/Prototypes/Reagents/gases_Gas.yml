@@ -1,77 +1,77 @@
 - type: gas
   id: 82
-  name: "reagent_name_oxygen"
+  name: oxygen
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: c4f5ff
-  reagent: "Oxygen"
+  reagent: Oxygen
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: oxygen_gas 
 
 - type: gas
   id: 83
-  name: "reagent_name_plasma"
+  name: plasma
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 7e009e
-  reagent: "Plasma"
+  reagent: Plasma
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: plasma_gas 
 
 - type: gas
   id: 84
-  name: "reagent_name_tritium"
+  name: tritium
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 66ff33
-  reagent: "Tritium"
+  reagent: Tritium
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: tritium_gas 
 
 - type: gas
   id: 85
-  name: "reagent_name_carbon_dioxide"
+  name: carbon_dioxide
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 66ff33
-  reagent: "CarbonDioxide"
+  reagent: CarbonDioxide
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: carbon_dioxide_gas 
 
 - type: gas
   id: 86
-  name: "reagent_name_nitrogen"
+  name: nitrogen
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: a1e1ff
-  reagent: "Nitrogen"
+  reagent: Nitrogen
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: nitrogen_gas 
 
 - type: gas
   id: 87
-  name: "reagent_name_nitrous_oxide"
+  name: nitrous_oxide
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 5d88c9
-  reagent: "NitrousOxide"
+  reagent: NitrousOxide
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: nitrous_oxide_gas 
 
 - type: gas
   id: 88
-  name: "reagent_name_frezon"
+  name: frezon
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 3a758c
-  reagent: "Frezon"
+  reagent: Frezon
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: frezon_gas 
 

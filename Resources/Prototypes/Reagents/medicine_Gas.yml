@@ -1,551 +1,550 @@
 - type: gas
   id: 89
-  name: "reagent_name_cryptobiolin"
+  name: cryptobiolin
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 081a80
-  reagent: "Cryptobiolin"
+  reagent: Cryptobiolin
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: cryptobiolin_gas 
 
 - type: gas
   id: 90
-  name: "reagent_name_dylovene"
+  name: dylovene
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 3a1d8a
-  reagent: "Dylovene"
+  reagent: Dylovene
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: dylovene_gas 
 
 - type: gas
   id: 91
-  name: "reagent_name_diphenhydramine"
+  name: diphenhydramine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 64ffe6
-  reagent: "Diphenhydramine"
+  reagent: Diphenhydramine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: diphenhydramine_gas 
 
 - type: gas
   id: 92
-  name: "reagent_name_ethylredoxrazine"
+  name: ethylredoxrazine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 2d5708
-  reagent: "Ethylredoxrazine"
+  reagent: Ethylredoxrazine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: ethylredoxrazine_gas 
 
 - type: gas
   id: 93
-  name: "reagent_name_arithrazine"
+  name: arithrazine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: bd5902
-  reagent: "Arithrazine"
+  reagent: Arithrazine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: arithrazine_gas 
 
 - type: gas
   id: 94
-  name: "reagent_name_bicaridine"
+  name: bicaridine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: ffaa00
-  reagent: "Bicaridine"
+  reagent: Bicaridine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: bicaridine_gas 
 
 - type: gas
   id: 95
-  name: "reagent_name_cryoxadone"
+  name: cryoxadone
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 0091ff
-  reagent: "Cryoxadone"
+  reagent: Cryoxadone
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: cryoxadone_gas 
 
 - type: gas
   id: 96
-  name: "reagent_name_doxarubixadone"
+  name: doxarubixadone
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 32cd32
-  reagent: "Doxarubixadone"
+  reagent: Doxarubixadone
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: doxarubixadone_gas 
 
 - type: gas
   id: 97
-  name: "reagent_name_dermaline"
+  name: dermaline
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 215263
-  reagent: "Dermaline"
+  reagent: Dermaline
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: dermaline_gas 
 
 - type: gas
   id: 98
-  name: "reagent_name_dexalin"
+  name: dexalin
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 0041a8
-  reagent: "Dexalin"
+  reagent: Dexalin
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: dexalin_gas 
 
 - type: gas
   id: 99
-  name: "reagent_name_dexalin_plus"
+  name: dexalin_plus
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 4da0bd
-  reagent: "DexalinPlus"
+  reagent: DexalinPlus
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: dexalin_plus_gas 
 
 - type: gas
   id: 100
-  name: "reagent_name_epinephrine"
+  name: epinephrine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: d2fffa
-  reagent: "Epinephrine"
+  reagent: Epinephrine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: epinephrine_gas 
 
 - type: gas
   id: 101
-  name: "reagent_name_hyronalin"
+  name: hyronalin
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 4cb580
-  reagent: "Hyronalin"
+  reagent: Hyronalin
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: hyronalin_gas 
 
 - type: gas
   id: 102
-  name: "reagent_name_ipecac"
+  name: ipecac
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 422912
-  reagent: "Ipecac"
+  reagent: Ipecac
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: ipecac_gas 
 
 - type: gas
   id: 103
-  name: "reagent_name_inaprovaline"
+  name: inaprovaline
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 731024
-  reagent: "Inaprovaline"
+  reagent: Inaprovaline
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: inaprovaline_gas 
 
 - type: gas
   id: 104
-  name: "reagent_name_kelotane"
+  name: kelotane
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: bf3d19
-  reagent: "Kelotane"
+  reagent: Kelotane
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: kelotane_gas 
 
 - type: gas
   id: 105
-  name: "reagent_name_leporazine"
+  name: leporazine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: ff7db5
-  reagent: "Leporazine"
+  reagent: Leporazine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: leporazine_gas 
 
 - type: gas
   id: 106
-  name: "reagent_name_barozine"
+  name: barozine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: ff867d
-  reagent: "Barozine"
+  reagent: Barozine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: barozine_gas 
 
 - type: gas
   id: 107
-  name: "reagent_name_phalanximine"
+  name: phalanximine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: c8ff75
-  reagent: "Phalanximine"
+  reagent: Phalanximine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: phalanximine_gas 
 
 - type: gas
   id: 108
-  name: "reagent_name_polypyrylium_oligomers"
+  name: polypyrylium_oligomers
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 9423FF
-  reagent: "PolypyryliumOligomers"
+  reagent: PolypyryliumOligomers
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: polypyrylium_oligomers_gas 
 
 - type: gas
   id: 109
-  name: "reagent_name_ambuzol"
+  name: ambuzol
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 86caf7
-  reagent: "Ambuzol"
+  reagent: Ambuzol
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: ambuzol_gas 
 
 - type: gas
   id: 110
-  name: "reagent_name_ambuzol_plus"
+  name: ambuzol_plus
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 1274b5
-  reagent: "AmbuzolPlus"
+  reagent: AmbuzolPlus
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: ambuzol_plus_gas 
 
 - type: gas
   id: 111
-  name: "reagent_name_pulped_banana_peel"
+  name: pulped_banana_peel
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: FFE774
-  reagent: "PulpedBananaPeel"
+  reagent: PulpedBananaPeel
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: pulped_banana_peel_gas 
 
 - type: gas
   id: 112
-  name: "reagent_name_saline"
+  name: saline
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 0064C8
-  reagent: "Saline"
+  reagent: Saline
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: saline_gas 
 
 - type: gas
   id: 113
-  name: "reagent_name_siderlac"
+  name: siderlac
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: f4dab8
-  reagent: "Siderlac"
+  reagent: Siderlac
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: siderlac_gas 
 
 - type: gas
   id: 114
-  name: "reagent_name_stellibinin"
+  name: stellibinin
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 2b2f77
-  reagent: "Stellibinin"
+  reagent: Stellibinin
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: stellibinin_gas 
 
 - type: gas
   id: 115
-  name: "reagent_name_synaptizine"
+  name: synaptizine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: d49a2f
-  reagent: "Synaptizine"
+  reagent: Synaptizine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: synaptizine_gas 
 
 - type: gas
   id: 116
-  name: "reagent_name_tranexamic_acid"
+  name: tranexamic_acid
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: ba7d7d
-  reagent: "TranexamicAcid"
+  reagent: TranexamicAcid
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: tranexamic_acid_gas 
 
 - type: gas
   id: 117
-  name: "reagent_name_tricordrazine"
+  name: tricordrazine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 00e5ff
-  reagent: "Tricordrazine"
+  reagent: Tricordrazine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: tricordrazine_gas 
 
 - type: gas
   id: 118
-  name: "reagent_name_lipozine"
+  name: lipozine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 2690b5
-  reagent: "Lipozine"
+  reagent: Lipozine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: lipozine_gas 
 
 - type: gas
   id: 119
-  name: "reagent_name_omnizine"
+  name: omnizine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: fcf7f9
-  reagent: "Omnizine"
+  reagent: Omnizine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: omnizine_gas 
 
 - type: gas
   id: 120
-  name: "reagent_name_ultravasculine"
+  name: ultravasculine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 520e30
-  reagent: "Ultravasculine"
+  reagent: Ultravasculine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: ultravasculine_gas 
 
 - type: gas
   id: 121
-  name: "reagent_name_oculine"
+  name: oculine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 404040
-  reagent: "Oculine"
+  reagent: Oculine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: oculine_gas 
 
 - type: gas
   id: 122
-  name: "reagent_name_cognizine"
+  name: cognizine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: b50ee8
-  reagent: "Cognizine"
+  reagent: Cognizine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: cognizine_gas 
 
 - type: gas
   id: 123
-  name: "reagent_name_ethyloxyephedrine"
+  name: ethyloxyephedrine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: d5d5e4
-  reagent: "Ethyloxyephedrine"
+  reagent: Ethyloxyephedrine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: ethyloxyephedrine_gas 
 
 - type: gas
   id: 124
-  name: "reagent_name_diphenylmethylamine"
+  name: diphenylmethylamine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: b0abaa
-  reagent: "Diphenylmethylamine"
+  reagent: Diphenylmethylamine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: diphenylmethylamine_gas 
 
 - type: gas
   id: 125
-  name: "reagent_name_sigynate"
+  name: sigynate
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: e0a5b9
-  reagent: "Sigynate"
+  reagent: Sigynate
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: sigynate_gas 
 
 - type: gas
   id: 126
-  name: "reagent_name_lacerinol"
+  name: lacerinol
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 283332
-  reagent: "Lacerinol"
+  reagent: Lacerinol
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: lacerinol_gas 
 
 - type: gas
   id: 127
-  name: "reagent_name_puncturase"
+  name: puncturase
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: b9bf93
-  reagent: "Puncturase"
+  reagent: Puncturase
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: puncturase_gas 
 
 - type: gas
-  id: -128
-  name: "reagent_name_bruizine"
+  id: 128
+  name: bruizine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: ff3636
-  reagent: "Bruizine"
+  reagent: Bruizine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: bruizine_gas 
 
 - type: gas
-  id: -127
-  name: "reagent_name_holywater"
+  id: 129
+  name: holywater
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 91C3F7
-  reagent: "Holywater"
+  reagent: Holywater
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: holywater_gas 
 
 - type: gas
-  id: -126
-  name: "reagent_name_pyrazine"
+  id: 130
+  name: pyrazine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: aa4308
-  reagent: "Pyrazine"
+  reagent: Pyrazine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: pyrazine_gas 
 
 - type: gas
-  id: -125
-  name: "reagent_name_insuzine"
+  id: 131
+  name: insuzine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 8147ff
-  reagent: "Insuzine"
+  reagent: Insuzine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: insuzine_gas 
 
 - type: gas
-  id: -124
-  name: "reagent_name_opporozidone"
+  id: 132
+  name: opporozidone
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: b5e36d
-  reagent: "Opporozidone"
+  reagent: Opporozidone
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: opporozidone_gas 
 
 - type: gas
-  id: -123
-  name: "reagent_name_necrosol"
+  id: 133
+  name: necrosol
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 86a5bd
-  reagent: "Necrosol"
+  reagent: Necrosol
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: necrosol_gas 
 
 - type: gas
-  id: -122
-  name: "reagent_name_necrosol_1"
+  id: 134
+  name: necrosol_1
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 86a5bd
-  reagent: "Necrosol"
+  reagent: Necrosol
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: necrosol_gas 
 
 - type: gas
-  id: -121
-  name: "reagent_name_necrosol_2"
+  id: 135
+  name: necrosol_2
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 86a5bd
-  reagent: "Necrosol"
+  reagent: Necrosol
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
-
+  gasOverlayState: necrosol_gas 
 
 - type: gas
-  id: -120
-  name: "reagent_name_psicodine"
+  id: 136
+  name: psicodine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 07E79E
-  reagent: "Psicodine"
+  reagent: Psicodine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: psicodine_gas 
 
 - type: gas
-  id: -119
-  name: "reagent_name_potassium_iodide"
+  id: 137
+  name: potassium_iodide
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: baa15d
-  reagent: "PotassiumIodide"
+  reagent: PotassiumIodide
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: potassium_iodide_gas 
 
 - type: gas
-  id: -118
-  name: "reagent_name_haloperidol"
+  id: 138
+  name: haloperidol
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 27870a
-  reagent: "Haloperidol"
+  reagent: Haloperidol
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: haloperidol_gas 
 

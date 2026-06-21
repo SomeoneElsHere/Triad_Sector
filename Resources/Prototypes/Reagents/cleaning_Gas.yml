@@ -1,55 +1,55 @@
 - type: gas
   id: 46
-  name: "reagent_name_bleach"
+  name: bleach
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: a1000b
-  reagent: "Bleach"
+  reagent: Bleach
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: bleach_gas 
 
 - type: gas
   id: 47
-  name: "reagent_name_space_cleaner"
+  name: space_cleaner
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: c8ff69
-  reagent: "SpaceCleaner"
+  reagent: SpaceCleaner
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: space_cleaner_gas 
 
 - type: gas
   id: 48
-  name: "reagent_name_soap"
+  name: soap
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: c8dfc9
-  reagent: "SoapReagent"
+  reagent: SoapReagent
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: soap_gas 
 
 - type: gas
   id: 49
-  name: "reagent_name_space_lube"
+  name: space_lube
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 77b58e
-  reagent: "SpaceLube"
+  reagent: SpaceLube
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: space_lube_gas 
 
 - type: gas
   id: 50
-  name: "reagent_name_space_glue"
+  name: space_glue
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: ffffff
-  reagent: "SpaceGlue"
+  reagent: SpaceGlue
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: space_glue_gas 
 

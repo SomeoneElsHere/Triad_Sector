@@ -1,143 +1,143 @@
 - type: gas
-  id: -117
-  name: "reagent_name_desoxyephedrine"
+  id: 139
+  name: desoxyephedrine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: FAFAFA
-  reagent: "Desoxyephedrine"
+  reagent: Desoxyephedrine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: desoxyephedrine_gas 
 
 - type: gas
-  id: -116
-  name: "reagent_name_ephedrine"
+  id: 140
+  name: ephedrine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: D2FFFA
-  reagent: "Ephedrine"
+  reagent: Ephedrine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: ephedrine_gas 
 
 - type: gas
-  id: -115
-  name: "reagent_name_stimulants"
+  id: 141
+  name: stimulants
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 9A040E
-  reagent: "Stimulants"
+  reagent: Stimulants
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: stimulants_gas 
 
 - type: gas
-  id: -114
-  name: "reagent_name_thc"
+  id: 142
+  name: thc
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 808080
-  reagent: "THC"
+  reagent: THC
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: thc_gas 
 
 - type: gas
-  id: -113
-  name: "reagent_name_nicotine"
+  id: 143
+  name: nicotine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: C0C0C0
-  reagent: "Nicotine"
+  reagent: Nicotine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: nicotine_gas 
 
 - type: gas
-  id: -112
-  name: "reagent_name_impedrezene"
+  id: 144
+  name: impedrezene
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 215263
-  reagent: "Impedrezene"
+  reagent: Impedrezene
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: impedrezene_gas 
 
 - type: gas
-  id: -111
-  name: "reagent_name_space_drugs"
+  id: 145
+  name: space_drugs
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 63806e
-  reagent: "SpaceDrugs"
+  reagent: SpaceDrugs
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: space_drugs_gas 
 
 - type: gas
-  id: -110
-  name: "reagent_name_bananadine"
+  id: 146
+  name: bananadine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: ffff00
-  reagent: "Bananadine"
+  reagent: Bananadine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: bananadine_gas 
 
 - type: gas
-  id: -109
-  name: "reagent_name_nocturine"
+  id: 147
+  name: nocturine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 128e80
-  reagent: "Nocturine"
+  reagent: Nocturine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: nocturine_gas 
 
 - type: gas
-  id: -108
-  name: "reagent_name_mute_toxin"
+  id: 148
+  name: mute_toxin
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 000000
-  reagent: "MuteToxin"
+  reagent: MuteToxin
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: mute_toxin_gas 
 
 - type: gas
-  id: -107
-  name: "reagent_name_norepinephric_acid"
+  id: 149
+  name: norepinephric_acid
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 96a8b5
-  reagent: "NorepinephricAcid"
+  reagent: NorepinephricAcid
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: norepinephric_acid_gas 
 
 - type: gas
-  id: -106
-  name: "reagent_name_tear_gas"
+  id: 150
+  name: tear_gas
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 96a8b5
-  reagent: "TearGas"
+  reagent: TearGas
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: tear_gas_gas 
 
 - type: gas
-  id: -105
-  name: "reagent_name_happiness"
+  id: 151
+  name: happiness
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: EE35FF
-  reagent: "Happiness"
+  reagent: Happiness
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: happiness_gas 
 

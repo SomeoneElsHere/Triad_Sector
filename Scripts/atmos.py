@@ -82,6 +82,7 @@ for file in os.listdir(pth):
 text = Path(base + "Resources/Textures/_DV/Effects/atmospherics.rsi")
 os.chdir(text)
 pos = 0
+cnges = Path.open(Path("changes.txt"),"x")
 for n in names:
     if (str(colors[pos]).endswith("#")):
         pos += 1
@@ -94,15 +95,16 @@ for n in names:
     newName = n+"_gas.png"
     shutil.copy(Path("water_vapor.png"),Path(newName))
     png = Image.open(newName)
-    print("        {\n")
-    print("            \"name\": \""+newName+"\",\n")
-    print("            \"delays\": [\n")
-    print("                [\n")
-    for x in range(119):
-        print("                    0.09,\n")
-    print("                ]\n")
-    print("            ]\n")
-    print("        },\n")
+    cnges.write("        {\n")
+    cnges.write("            \"name\": \""+newName+"\",\n")
+    cnges.write("            \"delays\": [\n")
+    cnges.write("                [\n")
+    for x in range(118):
+        cnges.write("                    0.09,\n")
+    cnges.write("                    0.09\n")
+    cnges.write("                ]\n")
+    cnges.write("            ]\n")
+    cnges.write("        },\n")
     
     png = png.convert('RGBA')
     
@@ -110,3 +112,5 @@ for n in names:
     c = RGBTransform().mix_with((col[0]*256,col[1]*256,col[2]*256),factor=.30).applied_to(png) #https://stackoverflow.com/questions/32578346/how-to-change-color-of-image-using-python
     c.save(newName)
     pos += 1
+cnges.flush()
+cnges.close()

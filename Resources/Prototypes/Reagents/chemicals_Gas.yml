@@ -1,143 +1,143 @@
 - type: gas
   id: 33
-  name: "reagent_name_acetone"
+  name: acetone
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: AF14B7
-  reagent: "Acetone"
+  reagent: Acetone
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: acetone_gas 
 
 - type: gas
   id: 34
-  name: "reagent_name_phenol"
+  name: phenol
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: E7EA91
-  reagent: "Phenol"
+  reagent: Phenol
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: phenol_gas 
 
 - type: gas
   id: 35
-  name: "reagent_name_charcoal"
+  name: charcoal
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 22282b
-  reagent: "Charcoal"
+  reagent: Charcoal
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: charcoal_gas 
 
 - type: gas
   id: 36
-  name: "reagent_name_ash"
+  name: ash
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: white
-  reagent: "Ash"
+  reagent: Ash
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: ash_gas 
 
 - type: gas
   id: 37
-  name: "reagent_name_sodium_carbonate"
+  name: sodium_carbonate
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: white
-  reagent: "SodiumCarbonate"
+  reagent: SodiumCarbonate
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: sodium_carbonate_gas 
 
 - type: gas
   id: 38
-  name: "reagent_name_artifexium"
+  name: artifexium
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 776291
-  reagent: "Artifexium"
+  reagent: Artifexium
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: artifexium_gas 
 
 - type: gas
   id: 39
-  name: "reagent_name_benzene"
+  name: benzene
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: E7EA91
-  reagent: "Benzene"
+  reagent: Benzene
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: benzene_gas 
 
 - type: gas
   id: 40
-  name: "reagent_name_hydroxide"
+  name: hydroxide
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: white
-  reagent: "Hydroxide"
+  reagent: Hydroxide
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: hydroxide_gas 
 
 - type: gas
   id: 41
-  name: "reagent_name_sodium_hydroxide"
+  name: sodium_hydroxide
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: white
-  reagent: "SodiumHydroxide"
+  reagent: SodiumHydroxide
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: sodium_hydroxide_gas 
 
 - type: gas
   id: 42
-  name: "reagent_name_fersilicite"
+  name: fersilicite
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 434b4d
-  reagent: "Fersilicite"
+  reagent: Fersilicite
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: fersilicite_gas 
 
 - type: gas
   id: 43
-  name: "reagent_name_sodium_polyacrylate"
+  name: sodium_polyacrylate
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: F0F0F0
-  reagent: "SodiumPolyacrylate"
+  reagent: SodiumPolyacrylate
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: sodium_polyacrylate_gas 
 
 - type: gas
   id: 44
-  name: "reagent_name_cellulose"
+  name: cellulose
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: E6E6DA
-  reagent: "Cellulose"
+  reagent: Cellulose
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: cellulose_gas 
 
 - type: gas
   id: 45
-  name: "reagent_name_rororium"
+  name: rororium
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: bf1365
-  reagent: "Rororium"
+  reagent: Rororium
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: rororium_gas 
 

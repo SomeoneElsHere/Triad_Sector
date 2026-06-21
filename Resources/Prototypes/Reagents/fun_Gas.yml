@@ -1,121 +1,121 @@
 - type: gas
   id: 71
-  name: "reagent_name_carpetium"
+  name: carpetium
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 800000
-  reagent: "Carpetium"
+  reagent: Carpetium
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: carpetium_gas 
 
 - type: gas
   id: 72
-  name: "reagent_name_fiber"
+  name: fiber
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 808080
-  reagent: "Fiber"
+  reagent: Fiber
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: fiber_gas 
 
 - type: gas
   id: 73
-  name: "reagent_name_buzzochloric_bees"
+  name: buzzochloric_bees
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: FFD35D
-  reagent: "BuzzochloricBees"
+  reagent: BuzzochloricBees
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: buzzochloric_bees_gas 
 
 - type: gas
   id: 74
-  name: "reagent_name_ground_bee"
+  name: ground_bee
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 86530E
-  reagent: "GroundBee"
+  reagent: GroundBee
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: ground_bee_gas 
 
 - type: gas
   id: 75
-  name: "reagent_name_saxoite"
+  name: saxoite
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: B8A603
-  reagent: "Saxoite"
+  reagent: Saxoite
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: saxoite_gas 
 
 - type: gas
   id: 76
-  name: "reagent_name_licoxide"
+  name: licoxide
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: FDD023
-  reagent: "Licoxide"
+  reagent: Licoxide
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: licoxide_gas 
 
 - type: gas
   id: 77
-  name: "reagent_name_razorium"
+  name: razorium
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: e3fffb
-  reagent: "Razorium"
+  reagent: Razorium
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: razorium_gas 
 
 - type: gas
   id: 78
-  name: "reagent_name_fresium"
+  name: fresium
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: b3f1ff
-  reagent: "Fresium"
+  reagent: Fresium
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: fresium_gas 
 
 - type: gas
   id: 79
-  name: "reagent_name_laughter"
+  name: laughter
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: FF4DD2
-  reagent: "Laughter"
+  reagent: Laughter
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: laughter_gas 
 
 - type: gas
   id: 80
-  name: "reagent_name_weh"
+  name: weh
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 59b23a
-  reagent: "JuiceThatMakesYouWeh"
+  reagent: JuiceThatMakesYouWeh
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: weh_gas 
 
 - type: gas
   id: 81
-  name: "reagent_name_hew"
+  name: hew
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: a64dc5
-  reagent: "JuiceThatMakesYouHew"
+  reagent: JuiceThatMakesYouHew
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: hew_gas 
 

@@ -1,121 +1,121 @@
 - type: gas
   id: 13
-  name: "reagent_name_blood"
+  name: blood
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 800000
-  reagent: "Blood"
+  reagent: Blood
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: blood_gas 
 
 - type: gas
   id: 14
-  name: "reagent_name_insect_blood"
+  name: insect_blood
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 808A51
-  reagent: "InsectBlood"
+  reagent: InsectBlood
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: insect_blood_gas 
 
 - type: gas
   id: 15
-  name: "reagent_name_slime"
+  name: slime
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 2cf274
-  reagent: "Slime"
+  reagent: Slime
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: slime_gas 
 
 - type: gas
   id: 16
-  name: "reagent_name_sap"
+  name: sap
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: cd7314
-  reagent: "Sap"
+  reagent: Sap
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: sap_gas 
 
 - type: gas
   id: 17
-  name: "reagent_name_hemocyanin_blood"
+  name: hemocyanin_blood
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 162581
-  reagent: "CopperBlood"
+  reagent: CopperBlood
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: hemocyanin_blood_gas 
 
 - type: gas
   id: 18
-  name: "reagent_name_ammonia_blood"
+  name: ammonia_blood
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 7a8bf2
-  reagent: "AmmoniaBlood"
+  reagent: AmmoniaBlood
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: ammonia_blood_gas 
 
 - type: gas
   id: 19
-  name: "reagent_name_zombie_blood"
+  name: zombie_blood
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 2b0700
-  reagent: "ZombieBlood"
+  reagent: ZombieBlood
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: zombie_blood_gas 
 
 - type: gas
   id: 20
-  name: "reagent_name_ichor"
+  name: ichor
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: f4692e
-  reagent: "Ichor"
+  reagent: Ichor
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: ichor_gas 
 
 - type: gas
   id: 21
-  name: "reagent_name_fat"
+  name: fat
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: d8d8b0
-  reagent: "Fat"
+  reagent: Fat
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: fat_gas 
 
 - type: gas
   id: 22
-  name: "reagent_name_vomit"
+  name: vomit
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 87ab08
-  reagent: "Vomit"
+  reagent: Vomit
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: vomit_gas 
 
 - type: gas
   id: 23
-  name: "reagent_name_grey_matter"
+  name: grey_matter
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: C584B8
-  reagent: "GreyMatter"
+  reagent: GreyMatter
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: grey_matter_gas 
 

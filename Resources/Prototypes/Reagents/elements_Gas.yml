@@ -1,220 +1,220 @@
 - type: gas
   id: 51
-  name: "reagent_name_aluminium"
+  name: aluminium # _we use real words here.
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 848789
-  reagent: "Aluminium"
+  reagent: Aluminium # We use real words here.
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: aluminium_gas 
 
 - type: gas
   id: 52
-  name: "reagent_name_carbon"
+  name: carbon
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 22282b
-  reagent: "Carbon"
+  reagent: Carbon
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: carbon_gas 
 
 - type: gas
   id: 53
-  name: "reagent_name_chlorine"
+  name: chlorine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: a2ff00
-  reagent: "Chlorine"
+  reagent: Chlorine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: chlorine_gas 
 
 - type: gas
   id: 54
-  name: "reagent_name_copper"
+  name: copper
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: b05b3c
-  reagent: "Copper"
+  reagent: Copper
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: copper_gas 
 
 - type: gas
   id: 55
-  name: "reagent_name_fluorine"
+  name: fluorine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: ba85cc
-  reagent: "Fluorine"
+  reagent: Fluorine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: fluorine_gas 
 
 - type: gas
   id: 56
-  name: "reagent_name_gold"
+  name: gold
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: F7C430
-  reagent: "Gold"
+  reagent: Gold
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: gold_gas 
 
 - type: gas
   id: 57
-  name: "reagent_name_hydrogen"
+  name: hydrogen
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: cccccc
-  reagent: "Hydrogen"
+  reagent: Hydrogen
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: hydrogen_gas 
 
 - type: gas
   id: 58
-  name: "reagent_name_iodine"
+  name: iodine
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: BC8A00
-  reagent: "Iodine"
+  reagent: Iodine
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: iodine_gas 
 
 - type: gas
   id: 59
-  name: "reagent_name_iron"
+  name: iron
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 434b4d
-  reagent: "Iron"
+  reagent: Iron
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: iron_gas 
 
 - type: gas
   id: 60
-  name: "reagent_name_lithium"
+  name: lithium
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: d6c0a7
-  reagent: "Lithium"
+  reagent: Lithium
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: lithium_gas 
 
 - type: gas
   id: 61
-  name: "reagent_name_mercury"
+  name: mercury
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 929296
-  reagent: "Mercury"
+  reagent: Mercury
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: mercury_gas 
 
 - type: gas
   id: 62
-  name: "reagent_name_potassium"
+  name: potassium
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: c6c8cc
-  reagent: "Potassium"
+  reagent: Potassium
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: potassium_gas 
 
 - type: gas
   id: 63
-  name: "reagent_name_phosphorus"
+  name: phosphorus
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: f5da9a
-  reagent: "Phosphorus"
+  reagent: Phosphorus
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: phosphorus_gas 
 
 - type: gas
   id: 64
-  name: "reagent_name_radium"
+  name: radium
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 00ff04
-  reagent: "Radium"
+  reagent: Radium
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: radium_gas 
 
 - type: gas
   id: 65
-  name: "reagent_name_silicon"
+  name: silicon
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 364266
-  reagent: "Silicon"
+  reagent: Silicon
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: silicon_gas 
 
 - type: gas
   id: 66
-  name: "reagent_name_silver"
+  name: silver
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: d0d0d0
-  reagent: "Silver"
+  reagent: Silver
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: silver_gas 
 
 - type: gas
   id: 67
-  name: "reagent_name_sulfur"
+  name: sulfur
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: fff385
-  reagent: "Sulfur"
+  reagent: Sulfur
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: sulfur_gas 
 
 - type: gas
   id: 68
-  name: "reagent_name_sodium"
+  name: sodium
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: a7b3d6
-  reagent: "Sodium"
+  reagent: Sodium
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: sodium_gas 
 
 - type: gas
   id: 69
-  name: "reagent_name_uranium"
+  name: uranium
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: 8fa191
-  reagent: "Uranium"
+  reagent: Uranium
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: uranium_gas 
 
 - type: gas
   id: 70
-  name: "reagent_name_zinc"
+  name: zinc
   specificHeat: 0.5
   heatCapacityRatio: 1.0
   molarMass: 1
   color: bababa
-  reagent: "Zinc"
+  reagent: Zinc
   gasOverlaySprite: /Textures/_DV/Effects/atmospherics.rsi
-  gasOverlayState: plasma
+  gasOverlayState: zinc_gas 
 
