@@ -21,6 +21,19 @@ namespace Content.Shared.Arcade
             public int value;
 
             public CardColor color;
+
+            public Card(int val, bool isRed)
+            {
+                value = val;
+                if (isRed)
+                {
+                    color = CardColor.Red;
+                }
+                else
+                {
+                    color = CardColor.Black;
+                }
+            }
         }
 
 
@@ -143,46 +156,25 @@ namespace Content.Shared.Arcade
         }
 
 
-        //USEABLE CARD DATA GOES HERE!!
-        public abstract class UseableCards : Modifiers
-        {
-            public void Apply(object I1, object I2, ref object O)
-            {
-
-                if (Function != null)
-                {
-                    var oup = Function.Invoke(I1, I2);
-                    if (!(oup is bool) && oupTF != null && O.GetType() == oupTF)
-                    {
-                        O = oup;
-                    }
-                }
-
-            }
-        }
-
-
-
-
 
         //wrapper and state of game data
         public abstract class BlackJackAction
         {
             public enum UIState
             {
-                Title,
                 Playmat,
                 Shop,
                 Score,
             }
 
-            public List<Card>? hand;
+            public List<Card>? BenchHand;
 
             public List<Card>? ScoringHand;
+            public List<Card>? CardPool;
 
             public List<CoolCards>? Cools;
 
-            public List<UseableCards>? Useables;
+            public int money;
 
             public int round;
 
@@ -193,6 +185,24 @@ namespace Content.Shared.Arcade
             public int scoreToBeat;
 
             private UIState UIstate;
+
+            public BlackJackAction()
+            {
+                UIstate = UIState.Playmat;
+                round = 1;
+                handscore = 0;
+                scoreToBeat = 50;
+                totalscore = 0;
+                money = 0;
+                CardPool = new List<Card>();
+                for(int i = 2; i<42; i++)
+                {
+                    CardPool.Add(new Card(i/2,i%2==0));
+                }
+                Cools = new List<CoolCards>();
+                BenchHand = new List<Card>();
+                ScoringHand = new List<Card>();
+            }
         }
 
         //If you just want the current state of the game
@@ -204,49 +214,61 @@ namespace Content.Shared.Arcade
 
         //if a player action is wanted
 
-        [Serializable, NetSerializable]
         public sealed class BlackJackPlayerAction : BlackJackAction
         {
-            public int[] validShop = { 0, 1, 2 };
 
-            public int[] validCard = { 0, 1, 2, 3, 4 };
-
-            public enum ValidPlay
+            public abstract class BasePlayerAction
             {
-                Stand,
-                Hit,
-                Double,
             }
 
-            public enum ActionType
+            public sealed class PlayerActionSelect : BasePlayerAction
             {
-                Shop,
+                public int slot;
 
-                Card,
+                public enum selectionRequest
+                {
+                    Buy,
+                    Sell,
+                    Play,
+                    Discard,
+                }
 
-                Play,
+                public selectionRequest Request;
             }
 
-            public ActionType Action;
+            public sealed class PlayerPressButton : BasePlayerAction
+            {
+                public enum ButtonRequest
+                {
+                    PlayCards,
+                    ExitShop,
 
-            public int Selection;
+                    Restart,
+                }
+
+                public ButtonRequest Request;
+            }
+
         }
 
-        //if a server action is wanted
-
-        [Serializable, NetSerializable]
+        //Internal Server events
         public sealed class BlackJackServerAction : BlackJackAction
         {
-            public enum UiSwitchType
+            public abstract class BaseServerAction
             {
-                Shop,
-                Playmat,
-                Score,
             }
 
-            public UiSwitchType Action;
+            public sealed class ServerUIEvent : BaseServerAction
+            {
+                public enum UISwitch
+                {
+                    Shop,
+                    Playmat,
+                    GameOver,
+                }
 
-            public int Selection;
+                public UISwitch Switch;
+            }
 
         }
 

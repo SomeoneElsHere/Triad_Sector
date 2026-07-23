@@ -24,7 +24,7 @@ public sealed class BlackJackGameBoundUserInterface : BoundUserInterface
         base.Open();
 
         _menu = this.CreateWindow<BlackJackGameMenu>();
-
+        _menu.OnPlayerAction += SendAction;
     }
 
     protected override void ReceiveMessage(BoundUserInterfaceMessage message)
